@@ -1,0 +1,31 @@
+@import "./settings.scss";
+@import "./Utils/variables";
+
+// @import "./utils/mixins.scss";
+
+// Pages
+@import "./Pages/home";
+@import "./Pages/posts";
+@import "./Pages/profile";
+
+
+// Common
+@import "./Common/header";
+@import "./Common/footer";
+@import "./Common/leftNavbar";
+
+
+// Components scss **************************
+
+//Log 
+@import "./Components/Log/signup";
+@import "./Components/Log/login";
+
+//Posts
+@import "./Components/Posts/postEdit";
+@import "./Components/Posts/postsNews";
+@import "./Components/Posts/posted";
+
+// @import "./pages/profile.scss";
+
+// @import "./components/icons.scss";

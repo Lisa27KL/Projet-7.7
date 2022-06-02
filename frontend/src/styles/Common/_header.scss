@@ -1,0 +1,30 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $tertiary;
+    border: dotted 4px  $primary;
+    border-radius: 25px 0 25px 0;
+    position: fixed;
+}
+
+.headerLogoTitle{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.imgLogoGp {
+    width: 16rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

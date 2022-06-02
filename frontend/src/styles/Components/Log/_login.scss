@@ -1,0 +1,82 @@
+#login{
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+  color: $secondary;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px 0 20px 0;
+  background-color: $primary;
+  margin: 10px;
+  width: 12rem;
+  border: dotted 2px $secondary;
+}
+
+#login:hover {
+  cursor: pointer;
+  transform: scale(1.10);
+  color:$primary ;
+  font-weight: bolder;
+  background-color: $secondary;
+  border: dotted 2px $primary;
+}
+
+.login-form-container {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 50px 0 50px 0;
+  background-color: $secondary;
+  box-shadow: 1px 6px 20px 7px $tertiary;
+  width: 35%;
+  margin-top: 30px;
+  margin-left: 32%;
+  border: dotted $primary;
+}
+
+.title-form-login {
+  color: $tertiary;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.form-login {
+  color:$tertiary;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.button-login {
+  margin-top: 10px;
+  color: $tertiary;
+  width: 35%;
+  font-size: 20px;
+  background-color: $primary;
+  font-weight: 900;
+  border-radius: 9px 0 9px 0;
+  border: dotted 4px $tertiary;
+  cursor: pointer;
+}
+
+.button-login:hover {
+  color: $primary;
+  background-color: $tertiary;
+  transform: scale(1.05);
+  border: dotted $secondary;
+  cursor: pointer;
+}
+
+.form-cards-login {
+  width: 75%;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 9px 0 9px 0;
+}
+
+#errorMsgLogIn{
+  color: $primary;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+}

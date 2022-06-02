@@ -1,0 +1,33 @@
+.leftNav-container{
+    height: 0px;
+    width: 35px;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    margin-left: 25px;
+    align-content: flex-end;
+}
+
+.nav-button{
+    display: flex;
+    font-size: 30px;
+    margin-top: 7rem;
+    justify-content: center;
+    color: $tertiary;
+    font-family: unset;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px 0 15px 0;
+    border: dotted 4px $tertiary;
+    background-color: $secondary;
+    cursor: pointer;
+    width: 65px;
+}
+
+.nav-button:hover{
+    color: $primary;
+    cursor: pointer;
+}

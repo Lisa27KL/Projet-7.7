@@ -1,0 +1,61 @@
+.cardPosted{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 30px 0 30px 0;
+    margin: 10px;
+    padding: 15px;
+    width: 40rem;
+    height: 10rem;
+    border: solid 2px $primary;
+}
+
+.talks{
+    color: blueviolet;    
+    //padding: 5px;
+}
+
+.postedPseudo{
+    display: flex;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+}
+
+.postedDate{
+    display: flex;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+
+}
+
+.postedMessage{
+    display: flex;
+    height: auto;
+}
+
+.postedTime{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: black;
+}
+
+.bigCard{
+    display: flex;
+}
+.postedImage{
+    display: flex;
+    width: 15rem;
+    height: 10rem;
+    background-color: $secondary;
+    border-radius: 30px 0 30px 0;
+    border: solid 2px $primary;
+    margin: 10px;
+    padding: 15px;
+}
+
+.imgPosted{
+    display: flex;
+}

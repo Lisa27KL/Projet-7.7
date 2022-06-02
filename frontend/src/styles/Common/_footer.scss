@@ -1,0 +1,43 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $tertiary;
+    border: dotted 4px  $primary;
+    border-radius: 0 25px 0 25px;
+    list-style: none;
+}
+
+.links-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    height: 35px;
+    justify-content: space-between;
+    width: 60rem;
+}
+
+#footer-title{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: $secondary;
+
+}
+
+.icons-footer{
+    display: flex;
+    font-size: 20px;
+    color: $secondary;
+}
+
+.icons-footer:hover{
+    transform: scale(1.05);
+    color: $primary;
+}
