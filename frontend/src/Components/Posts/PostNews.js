@@ -1,40 +1,25 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import PostContext from "./PostContext";
 import Posted from "./Posted";
+//import Commented from "../Comments/Commented";
 
-function PostNews() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem("user"));
-    if (user === null) {
-      window.location = "/";
-    }
-
-    const token = user.token;
-    axios
-      .get(`${process.env.REACT_APP_API_URL}api/posts/`, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-
-      .then((res) => setPosts(res.data))
-      
-      .catch((error) => ({ message: error }));
-  }, []);
+const PostNews = () => {
+  const {posts} = useContext(PostContext);
 
   return (
     <div className="actuality">
-      <h2 className="thread">En Actualité : </h2>
       <ul className="messagesArea">
-        {posts.map((post, id) => (
-          <Posted key={id} post={post}/>
-        ))}
+      <h2 className="thread">En Actualité : </h2>
+        {posts.map((post, id) =>(
+          <Posted key={id} post={post}/>))}
       </ul>
+     {/* <ul className="commentsArea">
+       {posts.map((comment,postId) => (
+         <Commented key={postId} comment={comment}/>
+       ))}
+       </ul>  */}
     </div>
   );
 }
 
-//Brouillon : onReply={handleSubmitReply} onEdit={handleEditPost} onDelete={handleDeletePost}
 export default PostNews;

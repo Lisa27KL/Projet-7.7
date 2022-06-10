@@ -60,10 +60,9 @@ function SignUpForm() {
           password,
         })
         .then((res) => {
-            console.log(res);
             setFormSubmit(true);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => ({message : error}));
     }
   };
 

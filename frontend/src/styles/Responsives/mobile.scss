@@ -1,0 +1,250 @@
+@media screen and (max-width:768px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        width: 24rem;
+    }
+    
+    .posts-backgroundImg{
+        padding-top: 4rem;
+        width: 24rem;
+    }
+
+    .header-container{
+        width: 24rem;
+    }
+
+    .imgLogoGp{
+        width: 14rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .Pseudo{
+        height: 3rem;
+        width: 20rem;
+        font-size: 18px;
+        margin-left: 30px;
+    }
+
+    .welcomeImg{
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .cardsDesign{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .leftNavbar-Column{
+        width: 24rem;
+        margin-bottom: 1rem;
+        padding-left: 3rem;
+    }
+
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .nav-button{
+        width: 3rem;
+        height: 3rem;
+        padding: 5px;
+        margin-bottom: 10px;
+        align-items: center;
+        border-radius: 15px 0 15px 0;
+    }
+
+    #ImOutBtn {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .chatingImg{
+        height: 2rem;
+        width: 3rem;
+        border-radius: 10px 0 10px 0;
+    }
+
+    .Icon-Title{
+        width: 11rem;
+        margin-left: 0;
+    }
+
+    .blocImgActions{
+        height: 8rem;
+        width: auto;
+    }
+
+    .post-Image{
+        font-size: 13px;
+    }
+
+    .imgBTN{
+        margin-left: 1rem;
+        font-size: 10px;
+        padding-top: 5px;
+        padding-bottom: 2rem;
+    }
+
+    #futurImg {
+        width: 7rem;
+        height: 5rem;
+        border-radius: 15px 0 15px 0;
+    }
+
+    .actionsPostsEdit{
+        padding-top: 0;
+        width: 6rem;
+        height: 8rem;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    .publish-btn{
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .postsEdit-Column{
+        width: 17rem;
+    }
+
+    .postNews-Column {
+        width: 24rem;
+    }
+
+    .postTitle{
+        font-size: 18px;
+        width: 10rem;
+    }
+
+    .postsCards{
+        order:1;
+        width: 17rem;
+        height: 18rem;
+    }
+
+    .cardMessage{
+        width: 13rem;
+        height: 4rem;
+    }
+
+    .actuality{
+        display: flex;
+        flex-direction: row;
+        order: 2;
+    }
+
+    .thread{
+        width: 15rem;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .messagesArea{
+        display: flex;
+        flex-direction: column;
+        width: 24rem;
+        height: 15rem;
+        margin-bottom: 2rem;
+        background-color: #ffffffe6;
+        border-radius: 0;
+        box-shadow: none;
+        border: dotted 4px $tertiary;
+    }
+
+    // .bigCard{
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
+    .cardPosted{
+        width: 20rem;
+        height: 8rem;
+        margin: 0;
+        padding: 8px;
+    }
+
+    .postedPseudo{
+        font-size: 11px;
+    }
+
+    .postedMessage{
+        font-size: 13px;
+    }
+
+    .date, .time{
+        font-size: 9px;
+    }
+
+    .postedImage{
+        width: 10rem;
+        height: 8rem;
+        margin: 0;
+    }
+    .writeModification {
+        width: 15rem;
+        height: 4rem;
+        margin: 5px;
+    }
+
+
+    #actions{
+        margin-top: 10px;
+    }
+
+    #modifyDeleteBtn{
+        width: 7rem;
+        height: 4rem;
+    }
+
+    .actionModifyPosted{
+        border-radius: 2rem;
+        width: 3rem;
+        padding: 2px;
+    }
+
+    #eraserPost{
+        padding: 10px;
+    }
+
+    .actionDeletePosted{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 2rem;
+    }
+
+    #binPost{
+        padding: 10px;
+    }
+
+    .footer-container{
+        width: 24rem;
+    }
+
+    #footer-title{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .links-footer{
+        width: 20rem;
+    }
+
+    .icons-footer{
+        font-size: 18px;
+    }
+}

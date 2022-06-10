@@ -157,3 +157,15 @@ module.exports.deleteUser = (req, res) => {
     })
     .catch((error) => res.status(500).json({ message: `${error}` }));
 };
+
+
+exports.myAvatar = async(req, res) =>{
+  try{
+    const image = req.file ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}`: null
+    req.user.avatar = image
+    await req.user.save()
+    res.status(200).send({message: "Your avatar has been uploaded"})
+  }catch(err){
+    res.status(404).send({message: err})
+  }
+}

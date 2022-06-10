@@ -26,6 +26,12 @@
 @import "./Components/Posts/postsNews";
 @import "./Components/Posts/posted";
 
+//Profile
+@import "./Components/Profile/profileEdit";
 // @import "./pages/profile.scss";
 
 // @import "./components/icons.scss";
+
+//Responsive
+@import "./Responsives/mobile.scss";
+@import "./Responsives/tablettes.scss";

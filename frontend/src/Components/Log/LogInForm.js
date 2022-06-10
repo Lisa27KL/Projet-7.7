@@ -15,27 +15,22 @@ function LogInForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
-    axios
-      .post(`${process.env.REACT_APP_API_URL}api/users/login`, {
-        email,
-        password,
-      })
-      .then((res) => {
-        sessionStorage.setItem("user", JSON.stringify(res.data))
-        window.location = "/posts";
-      })
-
-      .catch((error) => {
-
-        if(error){
-          document.getElementById("errorMsgLogIn").innerHTML = "Vérifiez vos informations ou Inscrivez-vous avant d'essayer de vous connecter !"
-        }
-      
-      });
+    //login(email, password);
+    axios.post(`${process.env.REACT_APP_API_URL}api/users/login`, {
+      email,
+      password,
+    })
+    .then((res) => {
+      sessionStorage.setItem("user", JSON.stringify(res.data));
+      window.location = "/posts";
+    })
+    .catch((error) => {
+      if(error){
+        document.getElementById("errorMsgLogIn").innerHTML = "Vérifiez vos informations ou Inscrivez-vous avant d'essayer de vous connecter !"
+      }});
   };
 
+  
   return (
     <div>
       <form

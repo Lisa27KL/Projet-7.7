@@ -28,46 +28,47 @@
   border-radius: 50px 0 50px 0;
   background-color: $secondary;
   box-shadow: 1px 6px 20px 7px $tertiary;
-  width: 35%;
+  width: 30rem;
   margin-top: 30px;
-  margin-left: 32%;
+  margin-left: 34%;
   border: dotted $primary;
 }
 
 .title-form-login {
   color: $tertiary;
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 15px;
 }
 
 .form-login {
   color:$tertiary;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .button-login {
   margin-top: 10px;
-  color: $tertiary;
-  width: 35%;
-  font-size: 20px;
-  background-color: $primary;
+  color: $primary;
+  width: 9rem;
+  height: 2rem;
+  font-size: 17px;
+  background-color: #4e51668a;
   font-weight: 900;
   border-radius: 9px 0 9px 0;
-  border: dotted 4px $tertiary;
+  border: dotted 4px $primary;
   cursor: pointer;
 }
 
 .button-login:hover {
-  color: $primary;
-  background-color: $tertiary;
+  color: $tertiary;
+  background-color: #fd2d017d;
   transform: scale(1.05);
-  border: dotted $secondary;
+  border: dotted $tertiary;
   cursor: pointer;
 }
 
 .form-cards-login {
-  width: 75%;
+  width: 25rem;
   height: 30px;
   margin-top: 5px;
   margin-bottom: 15px;

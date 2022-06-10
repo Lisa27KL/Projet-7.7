@@ -1,34 +1,43 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaPowerOff } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { BsNewspaper } from "react-icons/bs";
-
+import goOut from "../Common/img/ImOut.png";
+import profile from "../Common/img/profile.png";
+import newsPaper from "../Common/img/newspaper1.png";
 
 const LeftNav = () => {
+
+  const logout = () => {
+    sessionStorage.removeItem("user")
+  };
+  
   return (
+
     <div className="leftNav-container">
       <nav className="navBar">
         <NavLink to="/profile">
           <button className="nav-button">
-            <CgProfile />
+          <img src={profile} alt="myProfile" id="myProfileBtn" />
           </button>
         </NavLink>
+
 
         <NavLink to="/posts">
           <button className="nav-button">
-            <BsNewspaper />
+            <img src={newsPaper} alt="Actuality" id="ActualityBtn" />
           </button>
         </NavLink>
 
+
         <NavLink to="/">
-          <button className="nav-button">
-            <FaPowerOff />
+          <button className="nav-button"
+          onClick={()=>{logout()}}>
+            <img src={goOut} alt="LogOut" id="ImOutBtn"/>
           </button>
         </NavLink>
+
+
       </nav>
     </div>
   );
 };
-
 export default LeftNav;

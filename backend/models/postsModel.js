@@ -13,11 +13,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: true,
       default: 0,
      },
-     dislikes: {
-      type: Sequelize.INTEGER,
-      allowNull: true,
-      default: 0,
-     },
+    //  dislikes: {
+    //   type: Sequelize.INTEGER,
+    //   allowNull: true,
+    //   default: 0,
+    //  },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE

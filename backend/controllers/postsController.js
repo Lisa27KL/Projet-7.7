@@ -18,7 +18,11 @@ exports.createPost = (req, res) => {
     .then((post) => {
       post.save().then(() =>
         res.status(201).json({
-          message: "Post send !",
+          message: req.body.message,
+          image: req.file
+            ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}`
+            : null,
+          userId: userId,
         })
       );
     })
@@ -87,58 +91,83 @@ exports.findOnePost = (req, res) => {
 //     });
 // };
 
-exports.updatePost = (req, res, next) => {
-  if (req.file) {
-    // If image is modified -> delete the old one
-    Post.findOne({ _id: req.params.id })
-      .then((post) => {
-        const filename = post.imageUrl.split("/images/")[1];
+exports.updatePost = (req, res) => {
+  const id = req.params.id;
+
+    Post.findOne({
+      where: { id: id },})
+
+  .then((post) => {
+    if (req.file) {
+      if(post.image !== null){
+        const filename = post.image.split("/images/")[1];
         fs.unlink(`images/${filename}`, () => {
           const postObject = {
-            ...JSON.parse(req.body.post),
-            imageUrl: `${req.protocol}://${req.get("host")}/images/${
-              req.file.filename
-            }`,
-          };
-          Post.update({ _id: req.params.id }, { ...postObject })
-            .then(() => res.status(200).json({ message: "Post modified !" }))
-            .catch((error) => res.status(400).json({ message: error }));
+            // ...JSON.parse(req.body.post),
+            message: req.body.message,
+            image: `${req.protocol}://${req.get("host")}/images/${
+              req.file.filename}`,
+            }
+            console.log('sousou')
+            post.update({ ...postObject })
+          .then(() => res.status(200).json({ message: "Post modified !" }))
+          .catch((error) => res.status(400).json({ message: error }));
         });
-      })
-      .catch((error) => res.status(500).json({ message: error }));
-  } else {
-    // If the image is not modified
-    const postObject = { ...req.body };
-    Post.update({ _id: req.params.id }, { ...postObject })
-      .then(() => res.status(200).json({ message: "Post modified !" }))
+          
+      }else{
+        console.log("toutou")
+            const postObject = { ...req.body };
+            post.update({ ...postObject })
+              .then(() => res.status(200).json({ message: "Post modified !" }))
+              .catch((error) => res.status(400).json({ message: error }));
+      }
+    }else {
+      post.update(req.body.post)
+      .then(() => res.send({
+       message: "Post was updated successfully."
+      }))
       .catch((error) => res.status(400).json({ message: error }));
-  }
+    }
+      })
+
+  .catch(err => {
+    res.status(500).send({
+      message: "Error updating Post with id=" + id
+    });
+  });
 };
 
-// Delete a Post with the specified id in the request
-// exports.deletePost = (req, res) => {
-//     const id = req.params.id;
-//     Post.destroy({
-//       where: { id: id }
-//     })
-//       .then(num => {
-//         if (num == 1) {
-//           res.status(200).send({
-//             message: "Post was deleted successfully!"
-//           });
-//         } else {
-//           res.send({
-//             message: `Cannot delete Post with id=${id}. Maybe Post was not found!`
-//           });
-//         }
-//       })
-//       .catch(err => {
-//         res.status(500).send({
-//           message: "Could not delete Post with id=" + id
+// exports.updatePost = (req, res) => {
+//   const id = req.params.id;
+
+  // If image is modified -> delete the old one
+//   Post.findOne(id)
+//     .then((post) => {
+//       if (req.file) {
+//         const filename = post.imageUrl.split("/images/")[1];
+//         fs.unlink(`images/${filename}`, () => {
+//           const postObject = {
+//             ...JSON.parse(req.body.post),
+//             imageUrl: `${req.protocol}://${req.get("host")}/images/${
+//               req.file.filename
+//             }`,
+//           };
+//           Post.update({ _id: req.params.id }, { ...postObject })
+//             .then(() => res.status(200).json({ message: "Post modified !" }))
+//             .catch((error) => res.status(400).json({ message: "error1" }));
 //         });
-//       });
+//       } else {
+//         // If the image is not modified
+//         const postObject = { ...req.body };
+//         Post.update({ _id: req.params.id }, { ...postObject })
+//           .then(() => res.status(200).json({ message: "Post modified !" }))
+//           .catch((error) => res.status(400).json({ message: "error2" }));
+//       }
+//     })
+//     .catch((error) => res.status(500).json({ message: "error3" }));
 // };
 
+// Delete a Post with the specified id in the request
 exports.deletePost = (req, res) => {
   const id = req.params.id;
   Post.destroy({
@@ -151,19 +180,13 @@ exports.deletePost = (req, res) => {
         });
       } else {
         res.status(404).send({
-          message: `Cannot delete Post with id=${id}. Maybe Post was not found!`,
+          message: `Cannot delete Post with id` + `${id}`
         });
       }
-      const filename = num.imageUrl.split("/images/")[1];
-      fs.unlink(`images/${filename}`, () => {
-        Post.destroy({ _id: req.params.id })
-          .then(() => res.status(200).json({ message: "Post Deleted !" }))
-          .catch((error) => res.status(400).json({ message: error }));
-      });
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Post with id=" + id,
+        message: "Could not delete Post with id" + `${id}`,
       });
     });
 };
@@ -213,10 +236,7 @@ exports.likeDislikePost = (req, res) => {
   } else {
     Post.findOne({ _id: req.params.id })
       .then((post) => {
-        if (
-          post.usersLiked.includes(req.body.userId) &&
-          req.body.like !== -1
-        ) {
+        if (post.usersLiked.includes(req.body.userId) && req.body.like !== -1) {
           Post.updateOne(
             { _id: req.params.id },
             {
