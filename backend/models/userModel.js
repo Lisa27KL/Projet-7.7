@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
   const User = sequelize.define("user", {
-    avatar:{
+    image:{
       allowNull: true,
       type: Sequelize.STRING,
     },
@@ -15,6 +15,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     password: {
       allowNull: false,
+      type: Sequelize.STRING,
+    },
+    bio:{
+      allowNull:true,
       type: Sequelize.STRING,
     },
     createdAt: {

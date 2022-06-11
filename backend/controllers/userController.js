@@ -86,7 +86,7 @@ exports.login = (req, res) => {
 exports.findOneUser = (req, res) => {
   try {
     User.findByPk(req.params.id, {
-      attributes: ["id", "pseudo", "email"],
+      attributes: ["id", "pseudo", "email", "image", "bio"],
     }).then((user) => {
       res.status(200).json({ user });
     });
@@ -110,7 +110,7 @@ exports.findAllUsers = (req, res) => {
 module.exports.updateUser = (req, res) => {
   try {
   User.findOne({
-    attributes: ["id", "pseudo", "email", "password"],
+    attributes: ["id", "pseudo", "email", "password", "image", "bio"],
     where: { id: req.params.id },
   })
     .then((user) => {
@@ -120,7 +120,9 @@ module.exports.updateUser = (req, res) => {
             {
               pseudo: req.body.pseudo,
               email: req.body.email,
-              password: bcrypt.hashSync(req.body.password, 8),
+              image: req.file ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}` : null,
+              bio: req.body.bio,
+              // password: bcrypt.hashSync(req.body.password, 8),
             },
             { where: { id: user.id } }
           )
@@ -157,15 +159,3 @@ module.exports.deleteUser = (req, res) => {
     })
     .catch((error) => res.status(500).json({ message: `${error}` }));
 };
-
-
-exports.myAvatar = async(req, res) =>{
-  try{
-    const image = req.file ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}`: null
-    req.user.avatar = image
-    await req.user.save()
-    res.status(200).send({message: "Your avatar has been uploaded"})
-  }catch(err){
-    res.status(404).send({message: err})
-  }
-}

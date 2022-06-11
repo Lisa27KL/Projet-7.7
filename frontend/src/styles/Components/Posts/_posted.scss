@@ -6,8 +6,8 @@
     border-radius: 30px 0 30px 0;
     margin: 5px;
     padding: 15px;
-    width: 45rem;
-    height: 13rem;
+    width: 30rem;
+    height: 11rem;
     border: solid 2px $primary;
 }
 
@@ -45,6 +45,9 @@
 
 .bigCard{
     display: flex;
+    justify-content: space-around;
+    background-color: #4e5166d4;
+    border-radius: 20px 20px 0 0;
 }
 
 .dateTime{
@@ -71,13 +74,15 @@
 
 .postedImage{
     display: flex;
-    width: 20rem;
-    height: 13rem;
-    background-color: #ffd7d76b;
+    width: 13rem;
+    height: 11rem;
+    background-color: white;
     border-radius: 30px 0 30px 0;
     border: solid 2px $primary;
     margin: 5px;
     padding: 10px;
+    background-color: #ff00002b;
+    border-radius: 0 0 20px 20px;
 }
 
 .imgPosted{
@@ -97,11 +102,11 @@
 }
 
 .actionModifyPosted{
-    border-radius: 1rem;
+    border-radius: 2rem;
     display: flex;
     justify-content: center;
     width: 4rem;
-    padding: 2px;
+    padding: 7px;
     border: dotted 2px #FD2D01;
     background-color: whitesmoke;
     cursor: pointer;
@@ -109,6 +114,7 @@
 
 .actionDeletePosted{
     border-radius: 4rem;
+    padding: 6px;
     display: flex;
     justify-content: center;
     width: 4rem;
@@ -127,13 +133,18 @@
     height: 3rem;
 }
 
+#eraserPost{
+    width: 3rem;
+    height: 3rem;
+}
+
 #modifyDeleteBtn{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    width: 10rem;
+    width: 30rem;
 }
 
 .writeModification{

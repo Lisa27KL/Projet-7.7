@@ -11,19 +11,22 @@ const Posts = () => {
   return (
     <PostProvider>
       <div className="posts-backgroundImg">
-        <div className="Pseudo">
-          <img src={welcome} alt="welcomeImage" className="welcomeImg" />
-          Mes Salutations Distinguées {pseudo}
-        </div>
-        <div className="cardsDesign">
+        <div className="navbarTop">
+          <div className="Pseudo">
+            <img src={welcome} alt="welcomeImage" className="welcomeImg" />
+            Mes Salutations Distinguées {pseudo}
+          </div>
+
           <div className="leftNavbar-Column">
             <LeftNavbar />
           </div>
-          <div className="postNews-Column">
-            <PostNews />
-          </div>
+        </div>
+        <div className="cardsDesign">
           <div className="postsEdit-Column">
             <PostsEdit />
+          </div>
+          <div className="postNews-Column">
+            <PostNews />
           </div>
         </div>
       </div>

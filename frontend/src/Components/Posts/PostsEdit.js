@@ -84,7 +84,6 @@ const PostsEdit = () => {
                   id="file"
                   className="imgBTN"
                   type="file"
-                  // value={image}
                   name="image"
                   size="lg"
                   onChange={(e) => handleImageChange(e)}

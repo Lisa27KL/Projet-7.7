@@ -2,16 +2,29 @@ const express = require("express");
 const multer = require("../middlewares/multer");
 const router = express.Router();
 const postsCtrl = require("../controllers/postsController.js");
-const authJwt  = require("../middlewares/authJWT");
-const authorization = require("../middlewares/authorization");
+const authJwt = require("../middlewares/authJWT");
+const authorization = require("../middlewares/authorizationPost");
 
+router.post("/", authJwt.verifyToken, multer, postsCtrl.createPost);
 
-router.post("/",authJwt.verifyToken,authorization, multer, postsCtrl.createPost);
-router.get("/",authJwt.verifyToken, authorization, postsCtrl.findAllPosts);
-router.get("/:id",authJwt.verifyToken,authorization, postsCtrl.findOnePost);
-router.put("/:id",authJwt.verifyToken,multer, postsCtrl.updatePost);
-router.delete("/:id",authJwt.verifyToken, postsCtrl.deletePost);
-router.delete("/",authJwt.verifyToken, postsCtrl.deleteAllPost);
-router.post("/:id/like", authJwt.verifyToken, postsCtrl.likeDislikePost);
+router.get("/", authJwt.verifyToken, postsCtrl.findAllPosts);
+router.get("/:id", authJwt.verifyToken, postsCtrl.findOnePost);
+
+router.put(
+  "/:id",
+  authJwt.verifyToken,
+  multer,
+  authorization ||
+  authJwt.isAdmin,
+  postsCtrl.updatePost
+);
+
+router.delete(
+  "/:id",
+  authJwt.verifyToken,
+  authorization ||
+  authJwt.isAdmin,
+  postsCtrl.deletePost
+);
 
 module.exports = router;

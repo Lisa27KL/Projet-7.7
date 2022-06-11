@@ -3,26 +3,32 @@
 //     width: 35px;
 // }
 
+.navbarTop{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .navBar{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
 
 .nav-button{
     display: flex;
-    font-size: 30px;
     justify-content: center;
     color: $tertiary;
-    font-family: unset;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 20px 0 20px 0;
-    border: dotted 4px $tertiary;
+    padding: 9px;
+    margin: 0;
+    border-radius: 15px 0 15px 0;
+    border-left: dotted 4px $tertiary;
+    border-bottom: dotted 4px $tertiary;
+    border-right: dotted 4px $tertiary;
     background-color: $secondary;
     cursor: pointer;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 // #ImOutBtn{

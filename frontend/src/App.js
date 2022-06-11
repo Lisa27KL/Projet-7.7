@@ -5,17 +5,33 @@ import Footer from "./Common/Footer";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import Posts from "./Pages/Posts";
+import { UserProvider } from "./Components/Profile/UserContext";
+import Token from "./Services/Token";
 
-const App = () => {
+function App () {
+  const { token, setToken } = Token();
+
+  if (!token) {
+  return  (
+      <>
+        <Header /> 
+        <Home setToken={setToken} />;
+        <Footer /> 
+       </> 
+    );
+  }
+
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Posts />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <UserProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </UserProvider>
       <Footer />
     </BrowserRouter>
   );

@@ -1,102 +1,77 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
+import UserContext from "../../Components/Profile/UserContext";
+import { DateProfile } from "../../Services/DateContext";
 
-const Profile = ({ post }) => {
-  const { pseudo } = JSON.parse(sessionStorage.getItem("user"));
-  const { email } = JSON.parse(sessionStorage.getItem("user"));
 
-  const [avatar, setAvatar] = useState("");
+
+const Profile = ({profil}) => {
+  const {user, updateUser, deleteUser } = useContext(UserContext);
+
   const [image, setImage] = useState("");
   const [file, setFile] = useState("");
-  const [message, setMessage] = useState("");
-  //const [newImageFile, setNewImageFile] = useState("");
-
-  const handleMessageChange = (e) => {
-    setMessage({message : " "});
+  const [bio, setbio] = useState("");
+  
+  const handleBioProfile = (e) => {
+    setbio(e.target.value);
   };
 
-  const handleImageChange = (e) => {
+  const handleImageProfile = (e) => {
     setImage(URL.createObjectURL(e.target.files[0]));
-    setFile({file : ""});
+    setFile(e.target.files[0]);
   };
 
-  let newDate = new Date();
-  //Date
-  const date = newDate.getDate();
-  const month = newDate.getMonth() + 1;
-  const year = newDate.getFullYear();
-  const dayMonthYear = `${date < 10 ? `0${date}` : `${date}`}${"/"}${
-    month < 10 ? `0${month}` : `${month}`
-  }${"/"}${year}`;
-
-  //Time
-  const hour = newDate.getHours();
-  const minutes = newDate.getMinutes();
-  const time = `${hour < 10 ? `0${hour}` : `${hour}`}${":"}${
-    minutes < 10 ? `0${minutes}` : `${minutes}`
-  }`;
-
-  const avatarUser = (e) => {
+  const handleModify = (e) => {
     e.preventDefault();
-    const user = JSON.parse(sessionStorage.getItem("user"));
-    const token = user.token;
-    const formData = new FormData();
-    formData.append("message", message);
-    formData.append("image", file);
+    
+    if(bio || image){
+      const formData = new FormData();
+      formData.append("bio", bio);
 
-    axios
-      .post(`${process.env.REACT_APP_API_URL}api/posts/`, formData, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then(res =>{ return res.data.message})
-      .catch((error) => ({
-        message: error,
-      }));
+      if(file)formData.append("image", file);
+      if(window.confirm("Votre profil vous plaît-il ?"))
+      updateUser(formData);
+    }
   };
+
+
+ 
 
   return (
     <>
+
       <div className="profile">
         {/* First Column */}
         <div className="profileNews-Profile">
           <div className="profileEmail">
             <h2>Mon email : </h2>
-            <h3>{email}</h3>
+            <h3>{user.email}</h3>
           </div>
         </div>
 
         {/* Second Column */}
         <div className="cardAvatar">
           <div className="welcomeProfile">
-            Hello<h2 id="avatarName">{pseudo}</h2>comment vas-tu aujourd'hui ?
+            Hello<h2 id="avatarName">{user.pseudo}</h2>comment vas-tu aujourd'hui ?
           </div>
 
           <div className="profile-container">
             <div className="updateProfile-container">
               <div className="mySideAvatar">
                 <label id="avatar">Hey ! C'est moi là !! </label>
-                <form
-                  onSubmit={(e) => {
-                    avatarUser(e);
-                  }}
-                >
+                
                   <div>
-                    <img src={avatar} alt="" id="avatarImg" />
+                    <img src={image} alt="" id="avatarImg" />
                   </div>
-                </form>
                 <input
                   id="avatarFile"
                   type="file"
                   name="image"
                   onChange={(e) => {
-                    handleImageChange(e);
+                    handleImageProfile(e);
                   }}
                 />
               </div>
-              <div className="profileDate">Nous sommes le ~ {dayMonthYear}</div>
-              <div className="profileTime"> Il est actuellement ~ {time}</div>
+              <div className="profileDate">Nous sommes le ~ {DateProfile()}</div>
             </div>
           </div>
         </div>
@@ -107,13 +82,12 @@ const Profile = ({ post }) => {
 
           <textarea
             id="myBiography"
-            type="textarea"
-            value={message}
-            required
+            type="text"
+            defaultValue={user.bio}
             onChange={(e) => {
-              handleMessageChange(e);
+              handleBioProfile(e);
             }}
-          ></textarea>
+          />
         </div>
       </div>
     </>

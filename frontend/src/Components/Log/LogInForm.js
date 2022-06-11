@@ -15,7 +15,6 @@ function LogInForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //login(email, password);
     axios.post(`${process.env.REACT_APP_API_URL}api/users/login`, {
       email,
       password,
