@@ -5,7 +5,7 @@
   flex-wrap: nowrap;
   align-items: flex-end;
   justify-content: space-around;
-  padding-top: 3rem;
+  padding-top: 2.5rem;
 }
 
 .profileNews-Profile{
@@ -13,7 +13,7 @@
 }
 
 .profileEmail{
-  background-color: whitesmoke;
+  background-color: $textAreaColor;
   width: 14rem;
   text-align: center;
   padding: 13px;
@@ -22,16 +22,21 @@
   border: dotted $tertiary;
 }
 
+.emailProfile{
+  color: $tertiary;
+  font-size: 1.5rem;
+}
+
 // Second Column
 .cardAvatar {
   text-align: center;
-  border-radius: 50px 0 50px 0;
-  background-color: #ffd7d7ed;
+  border-radius: 30px 0 30px 0;
+  background-color: $secondaryOpacity;
   box-shadow: 1px 6px 20px 7px $tertiary;
-  border: dotted $tertiary;
+  border: dotted 2px $tertiary;
   height: 25rem;
-  padding: 2rem;
-  width: 35rem;
+  padding: 1rem;
+  width: 25rem;
 }
 
 .welcomeProfile {
@@ -41,7 +46,7 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #avatarName {
@@ -57,6 +62,7 @@
   font-size: 14px;
   font-weight: bold;
   color: grey;
+  margin-top: 1rem;
 }
 
 .mySideAvatar {
@@ -78,13 +84,13 @@
 }
 
 #avatarImg {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 6rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 9rem;
   box-sizing: border-box;
-  background-color: #4e5166f2;
+  background-color: $tertiaryOpacity;
   box-shadow: 0px 0px 7px 2px #ffd7d7;
-  border: dotted 4px #ffd7d7;
+  border: dotted 2px #ffd7d7;
 }
 
 //Third Column
@@ -93,13 +99,13 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  border-radius: 50px 0 50px 0;
-  background-color: #f5f5f5cc;
+  border-radius: 30px 0 30px 0;
+  background-color: $textAreaColor;
   box-shadow: 1px 6px 20px 7px $tertiary;
-  border: dotted $tertiary;
+  border: dotted 2px $tertiary;
   height: 25rem;
-  width: 25rem;
-  padding: 2rem;
+  width: 20rem;
+  padding: 1rem;
 }
 
 #talkingToYou{
@@ -108,19 +114,17 @@
   margin-bottom: 1rem;
   color: $secondary;
   background-color: #4e5166cf;
-  border-radius: 10px 0 10px 0;
+  border-radius: 15px 0 15px 0;
   padding: 5px;
   align-items: center;
+  width: 17.5rem;
+  border: dotted 2px $secondary;
 }
 
 #myBiography{
-  background-color: #ffd7d7d1;
-  border-radius: 10px 0 10px 0;
-}
-
-.profileBtn{
-  width: 5rem;
-  height: 5rem;
-  background-color: green;
-  border-radius: 5rem;
+  background-color: $secondaryOpacity;
+  border-radius: 15px 0 15px 0;
+  width: 17.5rem;
+  height: 20rem;
+  border: dotted 2px $tertiary;
 }

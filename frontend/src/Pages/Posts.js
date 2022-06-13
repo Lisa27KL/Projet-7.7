@@ -1,5 +1,5 @@
 import React from "react";
-import LeftNavbar from "../Common/LeftNavbar";
+import Navbar from "../Common/Navbar";
 import PostNews from "../Components/Posts/PostNews";
 import PostsEdit from "../Components/Posts/PostsEdit";
 import welcome from "../Common/img/welcome.png";
@@ -17,8 +17,8 @@ const Posts = () => {
             Mes Salutations Distinguées {pseudo}
           </div>
 
-          <div className="leftNavbar-Column">
-            <LeftNavbar />
+          <div className="navbar-Column">
+            <Navbar />
           </div>
         </div>
         <div className="cardsDesign">

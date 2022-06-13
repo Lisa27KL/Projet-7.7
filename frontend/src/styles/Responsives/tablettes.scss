@@ -1,3 +1,57 @@
-// @media all and (min-width:768px) {
-    
-// }
+@media screen and (max-width: 768px) {
+  body {
+    width: 54.5rem;
+  }
+
+  .header-container {
+    width: 54.5rem;
+  }
+
+  .signup-form-container, .login-form-container {
+    margin-left: 12rem;
+  }
+
+  .form-cards-signup{
+    margin: 0;
+  }
+
+  .footer-container {
+    width: 54.5rem;
+  }
+
+  .links-footer {
+    width: 40rem;
+    margin-left: 7rem;
+  }
+
+  #success{
+    margin-left: 4rem;
+  }
+
+  .cardAvatar{
+    width: 18rem;
+    height: 23rem;
+  }
+  
+  .biographyCards{
+    width: 18rem;
+    height: 15rem;
+  }
+
+  #talkingToYou{
+    width: 15.5rem;
+  }
+
+  #myBiography{
+    width: 15.5rem;
+  }
+
+  .welcomeProfite{
+    font-size: 17px;
+  }
+
+  #avatarImg{
+    width: 11rem;
+    height: 11rem;
+  }
+}

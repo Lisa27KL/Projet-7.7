@@ -1,40 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import UserContext from "../../Components/Profile/UserContext";
-import { DateProfile } from "../../Services/DateContext";
-
+import { DateProfile } from "../../Services/Date";
 
 
 const Profile = ({profil}) => {
-  const {user, updateUser, deleteUser } = useContext(UserContext);
-
-  const [image, setImage] = useState("");
-  const [file, setFile] = useState("");
-  const [bio, setbio] = useState("");
-  
-  const handleBioProfile = (e) => {
-    setbio(e.target.value);
-  };
-
-  const handleImageProfile = (e) => {
-    setImage(URL.createObjectURL(e.target.files[0]));
-    setFile(e.target.files[0]);
-  };
-
-  const handleModify = (e) => {
-    e.preventDefault();
-    
-    if(bio || image){
-      const formData = new FormData();
-      formData.append("bio", bio);
-
-      if(file)formData.append("image", file);
-      if(window.confirm("Votre profil vous plaît-il ?"))
-      updateUser(formData);
-    }
-  };
-
-
- 
+  const {user } = useContext(UserContext);
 
   return (
     <>
@@ -44,32 +14,24 @@ const Profile = ({profil}) => {
         <div className="profileNews-Profile">
           <div className="profileEmail">
             <h2>Mon email : </h2>
-            <h3>{user.email}</h3>
+            <h3 className="emailProfile">{user.email}</h3>
           </div>
         </div>
 
         {/* Second Column */}
         <div className="cardAvatar">
           <div className="welcomeProfile">
-            Hello<h2 id="avatarName">{user.pseudo}</h2>comment vas-tu aujourd'hui ?
+          <h2> Hey c'est moi </h2>
+          <br/>
+          <h3 id="avatarName">{user.pseudo}</h3>
           </div>
 
           <div className="profile-container">
             <div className="updateProfile-container">
-              <div className="mySideAvatar">
-                <label id="avatar">Hey ! C'est moi là !! </label>
-                
+              <div className="mySideAvatar">                
                   <div>
-                    <img src={image} alt="" id="avatarImg" />
+                    <img src={user.image} alt="" id="avatarImg" />
                   </div>
-                <input
-                  id="avatarFile"
-                  type="file"
-                  name="image"
-                  onChange={(e) => {
-                    handleImageProfile(e);
-                  }}
-                />
               </div>
               <div className="profileDate">Nous sommes le ~ {DateProfile()}</div>
             </div>
@@ -80,14 +42,8 @@ const Profile = ({profil}) => {
         <div className="biographyCards">
           <h3 id="talkingToYou">Je vous parle de moi :</h3>
 
-          <textarea
-            id="myBiography"
-            type="text"
-            defaultValue={user.bio}
-            onChange={(e) => {
-              handleBioProfile(e);
-            }}
-          />
+          <p id="myBiography">{user.bio}</p>
+          
         </div>
       </div>
     </>

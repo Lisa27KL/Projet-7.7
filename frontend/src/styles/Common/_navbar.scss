@@ -1,8 +1,3 @@
-// .leftNav-container{
-//     height: 0px;
-//     width: 35px;
-// }
-
 .navbarTop{
     display: flex;
     justify-content: space-around;
@@ -18,29 +13,18 @@
 .nav-button{
     display: flex;
     justify-content: center;
-    color: $tertiary;
-    padding: 9px;
-    margin: 0;
+    align-items: center;
     border-radius: 15px 0 15px 0;
-    border-left: dotted 4px $tertiary;
-    border-bottom: dotted 4px $tertiary;
-    border-right: dotted 4px $tertiary;
-    background-color: $secondary;
+    border-left: dotted 2px $secondary;
+    border-bottom: dotted 2px $secondary;
+    border-right: dotted 2px $secondary;
+    background-color: $tertiaryOpacity;
     cursor: pointer;
     width: 4rem;
     height: 4rem;
 }
 
-// #ImOutBtn{
-
-// }
-
 .nav-button:hover{
-    color: $primary;
+    background-color: $secondaryOpacity;
     cursor: pointer;
-}
-
-#ImOutBtn{
-    width: 3rem;
-    height: 3rem;
 }

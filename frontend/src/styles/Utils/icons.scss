@@ -1,0 +1,35 @@
+#profileSettings, .eraserPost,  #stampPosted , #stampProfile , .binPost, .groupIcon{
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+#profileSettings, .eraserPost:hover, #stampPosted:hover , #stampProfile:hover , .binPost:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+//Icons footer
+
+.socialIcons{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#signupIcon, #loginIcon {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+.chatingImg, .welcomeImg, #ImOutBtn, #myProfileBtn, #ActualityBtn{
+    height: 3rem;
+    width: 3rem;
+}
+
+#binBtn, #editBtn{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+  }

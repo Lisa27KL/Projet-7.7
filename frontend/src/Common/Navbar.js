@@ -4,7 +4,7 @@ import goOut from "../Common/img/ImOut.png";
 import profile from "../Common/img/profile.png";
 import newsPaper from "../Common/img/newspaper1.png";
 
-const LeftNav = () => {
+const NavBar = () => {
 
   const logout = () => {
     sessionStorage.removeItem("user")
@@ -12,7 +12,7 @@ const LeftNav = () => {
   
   return (
 
-    <div className="leftNav-container">
+    <div className="NavBar-container">
       <nav className="navBar">
         <NavLink to="/profile">
           <button className="nav-button">
@@ -40,4 +40,4 @@ const LeftNav = () => {
     </div>
   );
 };
-export default LeftNav;
+export default NavBar;

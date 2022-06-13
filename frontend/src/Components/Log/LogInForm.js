@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import loginIcon from "../../Common/img/loginIcon.png"
 
 function LogInForm() {
   const [email, setEmail] = useState("");
@@ -40,12 +41,12 @@ function LogInForm() {
       >
         <h2 className="title-form-login"> Connectez-vous</h2>
 
-        <label className="form-login">Email:</label>
         <br />
         <input
           className="form-cards-login"
           type="email"
           value={email}
+          placeholder="Saisissez votre Email"
           required
           onChange={(e) => {
             handleEmailChange(e);
@@ -53,20 +54,20 @@ function LogInForm() {
         />
         <br />
 
-        <label className="form-login">Password:</label>
         <br />
         <input
           className="form-cards-login"
           type="password"
           value={password}
+          placeholder="Saisissez votre Mot de Passe"
           required
           onChange={(e) => {
             handlePasswordChange(e);
           }}
         />
         <br />
-        <input type="submit" value="Se Connecter" className="button-login" />
-        
+        <img src={loginIcon} alt="loginIcon" id="loginIcon" onClick={(e) => {handleSubmit(e)}}/>
+
         <div id="errorMsgLogIn"></div>
 
       </form>

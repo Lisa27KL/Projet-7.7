@@ -1,5 +1,8 @@
 import React from "react";
-import { FiLinkedin, FiTwitter, FiFacebook, FiDribbble } from "react-icons/fi";
+import linkedin from "../Common/img/linkedin.png";
+import twitter from "../Common/img/twitter.png";
+import facebook from "../Common/img/facebook.png";
+import instagram from "../Common/img/instagram.png";
 
 const Footer = () => {
   return (
@@ -15,7 +18,7 @@ const Footer = () => {
             className="icons-footer"
             target="blank"
           >
-            <FiLinkedin />
+            <img src={linkedin} alt="linkedin" className="socialIcons" />
           </a>
         </li>
         <li>
@@ -24,7 +27,7 @@ const Footer = () => {
             className="icons-footer"
             target="blank"
           >
-            <FiTwitter />
+            <img src={twitter} alt="twitter" className="socialIcons" />
           </a>
         </li>
         <li>
@@ -33,16 +36,16 @@ const Footer = () => {
             className="icons-footer"
             target="blank"
           >
-            <FiFacebook />
+          <img src={facebook} alt="facebook" className="socialIcons" />
           </a>
         </li>
         <li>
           <a
-            href="https://dribbble.com/"
+            href="https://instagram.com/"
             className="icons-footer"
             target="blank"
           >
-            <FiDribbble />
+            <img src={instagram} alt="instagram" className="socialIcons" />
           </a>
         </li>
       </div>

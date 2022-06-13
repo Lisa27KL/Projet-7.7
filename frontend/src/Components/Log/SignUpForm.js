@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import LogInForm from "./LogInForm";
+import signupIcon from "../../Common/img/sinupIcon.png"
 
 function SignUpForm() {
   const [formSubmit, setFormSubmit] = useState(false);
@@ -77,17 +78,17 @@ function SignUpForm() {
         <div>
           <form
             onSubmit={(e) => {
-              handleSubmit(e);
+              handleSubmit(e)
             }}
             className="signup-form-container"
           >
             <h2 className="title-form-signup"> Rejoignez-nous</h2>
-            <label className="form-signup">Pseudo:</label>
             <br />
             <input
               className="form-cards-signup"
               type="text"
               value={pseudo}
+              placeholder="Saississez votre Pseudo"
               required
               onChange={(e) => {
                 handlePseudoChange(e);
@@ -95,36 +96,36 @@ function SignUpForm() {
             />
 
             <br />
-            <label className="form-signup">Email:</label>
             <br />
             <input
               className="form-cards-signup"
               type="email"
               value={email}
+              placeholder="Saississez votre Email"
               required
               onChange={(e) => {
                 handleEmailChange(e);
               }}
             />
             <br />
-            <label className="form-signup">Mot de passe:</label>
             <br />
             <input
               className="form-cards-signup"
               type="password"
               value={password}
+              placeholder="Saississez votre Mot de Passe"
               required
               onChange={(e) => {
                 handlePasswordChange(e);
               }}
             />
             <br />
-            <label className="form-signup">Confirmez Mot de passe:</label>
             <br />
             <input
               className="form-cards-signup"
               type="password"
               value={confPassword}
+              placeholder="Confirmez votre Mot de Passe"
               required
               onChange={(e) => {
                 handleConfPasswordChange(e);
@@ -141,11 +142,7 @@ function SignUpForm() {
               </label>
             </div>
             <div id="errorMsgSignUp"></div>
-            <input
-              type="submit"
-              value="Inscription"
-              className="button-signup"
-            />
+            <img src={signupIcon} alt="signUpIcon" id="signupIcon" onClick={(e) => {handleSubmit(e)}}/>
           </form>
         </div>
       )}

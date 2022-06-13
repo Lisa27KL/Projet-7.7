@@ -5,9 +5,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: $tertiary;
-    border: dotted 4px  $primary;
-    border-radius: 25px 0 25px 0;
+    background-color: $tertiaryOpacity;
+    border: solid 2px  $primary;
     position: fixed;
 }
 

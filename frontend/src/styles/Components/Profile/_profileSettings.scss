@@ -1,0 +1,39 @@
+.navbar-Profile {
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.blocActions{
+    width: 25rem;
+    height: 21rem;
+    background-color: $textAreaColor;
+    position: absolute;
+    border: dotted 2px $primary;
+    border-radius: 15px 0 15px 0;
+    padding: 10px;
+}
+
+.closeModal{
+    background-color: $primaryOpacity;
+    font-size: 1.5rem;
+    border: dotted 2px $tertiaryOpacity;
+    border-radius: 10px 0 10px 0;
+    margin: 5px;
+}
+
+.settingsModification{
+    height: 8rem;
+    width: 11rem;
+    background-color: $secondaryOpacity;
+    border-radius: 13px 0 13px 0;
+    margin: 5px;
+    padding: 10px;
+    border: dotted 2px $tertiary;
+}
+
+.deleteProfile{
+    width: 10rem;
+}

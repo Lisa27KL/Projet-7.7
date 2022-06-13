@@ -2,25 +2,26 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: whitesmoke;
-    border-radius: 30px 0 30px 0;
+    background-color: $textAreaColor;
+    border-radius: 15px 0 15px 0;
     margin: 5px;
     padding: 15px;
     width: 30rem;
     height: 11rem;
-    border: solid 2px $primary;
+    border: solid 2px $primaryOpacity;
+    margin-top: 1rem;
 }
 
 .talks{
     color: blueviolet;    
-    //padding: 5px;
 }
 
 .postedPseudo{
     display: flex;
-    font-size: 13px;
+    font-size: 15px;
     color: black;
     font-weight: bold;
+    border: dotted 1px $secondary;
 }
 
 .postedDate{
@@ -28,12 +29,12 @@
     font-size: 13px;
     color: black;
     font-weight: bold;
-
 }
 
 .postedMessage{
     display: flex;
     height: auto;
+    font-size: 20px;
 }
 
 .postedTime{
@@ -46,13 +47,14 @@
 .bigCard{
     display: flex;
     justify-content: space-around;
-    background-color: #4e5166d4;
-    border-radius: 20px 20px 0 0;
+    background-color: $tertiaryOpacity;
+    border-radius: 0 20px 0 0;
 }
 
 .dateTime{
     display: flex;
     flex-wrap: nowrap;
+    border: dotted 1px $secondary;
 }
 
 .date{
@@ -60,7 +62,6 @@
     font-size: 13px;
     color: black;
     font-weight: bold;
-
 }
 
 .time{
@@ -69,7 +70,6 @@
     font-size: 13px;
     color: black;
     font-weight: bold;
-
 }
 
 .postedImage{
@@ -78,11 +78,12 @@
     height: 11rem;
     background-color: white;
     border-radius: 30px 0 30px 0;
-    border: solid 2px $primary;
+    border: solid 2px $primaryOpacity;
     margin: 5px;
+    margin-top: 1rem;
     padding: 10px;
-    background-color: #ff00002b;
-    border-radius: 0 0 20px 20px;
+    background-color: $secondaryOpacity;
+    border-radius: 20px 0 20px 0;
 }
 
 .imgPosted{
@@ -95,47 +96,24 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
+    margin-bottom: 2rem;
+    background-color: $tertiaryOpacity;
+    border-radius: 0 0 0px 20px;
 }
 
 #actionsModifyDeletePosted{
     display: flex;
 }
 
-.actionModifyPosted{
-    border-radius: 2rem;
-    display: flex;
-    justify-content: center;
-    width: 4rem;
-    padding: 7px;
-    border: dotted 2px #FD2D01;
-    background-color: whitesmoke;
+#eraserPost, #stampPosted , #binPost{
+    width: 3rem;
+    height: 3rem;
     cursor: pointer;
 }
 
-.actionDeletePosted{
-    border-radius: 4rem;
-    padding: 6px;
-    display: flex;
-    justify-content: center;
-    width: 4rem;
-    border: dotted 2px #FD2D01;
-    background-color: whitesmoke;
-    cursor: pointer;
-}
-
-.actionDeletePosted:hover{
+#eraserPost:hover, #stampPosted:hover, #binPost:hover{
     cursor: pointer;
     transform: scale(1.1);
-}
-
-#binPost{
-    width: 3rem;
-    height: 3rem;
-}
-
-#eraserPost{
-    width: 3rem;
-    height: 3rem;
 }
 
 #modifyDeleteBtn{
@@ -144,14 +122,15 @@
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    width: 30rem;
+    width: 40rem;
 }
 
 .writeModification{
-    height: 5rem;
-    width: 30rem;
-    background-color: wheat;
+    height: 4rem;
+    width: 55rem;
+    background-color:$whiteOpacity;
     border-radius: 20px 0 20px 0;
     margin: 10px;
     padding: 10px;
+    border: dotted 2px $secondaryOpacity;
 }

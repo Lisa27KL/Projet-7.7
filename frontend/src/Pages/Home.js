@@ -3,11 +3,11 @@ import Log from "../Components/Log";
 
 const Home = () => {
   return (
-    <div>
+    <div className="homePaddingTop">
       <div className="home-backgroundImg">
         <Log />
       </div>
     </div>
-  );
+  )
 };
 export default Home;

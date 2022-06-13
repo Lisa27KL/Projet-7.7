@@ -7,13 +7,9 @@ const Header = () => {
     <nav>
       <div className="header-container">
         <div className="headerLogoTitle">
-            <div className="logo">
-              <img
-                src={Logo3}
-                className="imgLogoGp"
-                alt="Logo de Groupomania"
-              />
-            </div>
+          <div className="logo">
+            <img src={Logo3} className="imgLogoGp" alt="Logo de Groupomania" />
+          </div>
         </div>
       </div>
     </nav>

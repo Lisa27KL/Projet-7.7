@@ -8,33 +8,33 @@ import Posts from "./Pages/Posts";
 import { UserProvider } from "./Components/Profile/UserContext";
 import Token from "./Services/Token";
 
-function App () {
+function App() {
   const { token, setToken } = Token();
 
   if (!token) {
-  return  (
+    return (
       <>
-        <Header /> 
-        <Home setToken={setToken} />;
-        <Footer /> 
-       </> 
+        <Header />
+        <Home setToken={setToken} />
+        <Footer />
+      </>
     );
   }
 
   return (
     <BrowserRouter>
       <Header />
-      <UserProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </UserProvider>
-      <Footer />
+        <UserProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </UserProvider>
+        <Footer />
     </BrowserRouter>
   );
-};
+}
 
 export default App;

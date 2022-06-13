@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) {
+@media screen and (max-width:425px) {
 
     body{
         display: flex;
@@ -7,17 +7,56 @@
         padding: 0;
         justify-content: center;
         align-items: center;
-        width: 48rem;
+        width: 24.4rem;
     }
     
-    .posts-backgroundImg{
-        padding-top: 5rem;
-        width: 48rem;
+    .header-container, .footer-container{
+        width: 24.4rem;
+        height: 7rem;
     }
 
-    .header-container{
-        width: 48rem;
-        height: 5rem;
+    #homeConnection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 22rem;
+    }
+
+    .homePaddingTop {
+        padding-top: 7rem;
+    }
+
+    .home-backgroundImg{
+        width: 24.4rem;
+    }
+
+    .profile-backgroundImg{
+        padding-top: 7.1rem;
+    }
+
+    .signup-form-container, .login-form-container{
+        width: 23rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0.5rem;
+    }
+
+    .form-cards-signup, .form-cards-login {
+        width: 18rem;
+        height: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #success{
+        margin-left: 4rem;
+    }
+
+
+    .posts-backgroundImg{
+        padding-top: 5rem;
+        width: 24.4rem;
     }
 
     .imgLogoGp{
@@ -44,7 +83,7 @@
         padding-top: 1rem;
     }
 
-    .leftNavbar-Column{
+    .navbar-Column{
         width: 48rem;
         margin-bottom: 1rem;
         padding-left: 3rem;
@@ -166,11 +205,6 @@
         border: dotted 4px $tertiary;
     }
 
-    // .bigCard{
-    //     display: flex;
-    //     flex-direction: column;
-    // }
-
     .cardPosted{
         width: 20rem;
         height: 8rem;
@@ -201,7 +235,18 @@
         margin: 5px;
     }
 
+    .biographyCards{
+        width: 22rem;
+        height: 10rem;
+    }
 
+    .welcomeProfile{
+        font-size: 17px;
+    }
+    .cardAvatar{
+        width: 15rem;
+        height: 20rem;
+    }
     #actions{
         margin-top: 10px;
     }
@@ -231,9 +276,10 @@
         padding: 10px;
     }
 
-    .footer-container{
-        width: 48rem;
-        height: 5rem;
+    .profile{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
     }
 
     #footer-title{
@@ -244,6 +290,7 @@
     
     .links-footer{
         width: 20rem;
+        margin-left: 3rem;
     }
 
     .icons-footer{
