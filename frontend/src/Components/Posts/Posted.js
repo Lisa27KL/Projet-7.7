@@ -17,6 +17,7 @@ const Posted = ({ post }) => {
 
   const [update, setUpdate] = useState(false);
   const [pseudo, setPseudo] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [newMessage, setNewMessage] = useState("");
   const [newImage, setNewImage] = useState("");
   const [newFile, setNewFile] = useState();
@@ -58,6 +59,7 @@ const Posted = ({ post }) => {
       )
       .then((res) => {
         setPseudo(res.data.user.pseudo);
+        setAvatar(res.data.user.image);
       })
       .catch((error) => ({ message: error }));
   }, [post]);
@@ -67,7 +69,7 @@ const Posted = ({ post }) => {
       {/* Message ---------------------------- */}
       <div className="bigCard">
         <div className="UserAvatarPseudo">
-          <img src={user.image} alt="avatar" className="avatarUser" />
+          <img src={avatar} alt="avatar" className="avatarUser" />
           <div className="postedPseudo">Posté par :{pseudo} </div>
         </div>
         <div className="mediumCards">

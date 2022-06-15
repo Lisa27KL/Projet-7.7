@@ -164,6 +164,8 @@
 
 .myBiography {
   background-color: $secondaryOpacity;
+  font-size: 25px;
+  font-weight: 600;
   @include border-radius-15;
   width: 17.5rem;
   height: 20rem;
@@ -172,10 +174,12 @@
   @include mobile {
     width: 17.5rem;
     height: 4rem;
+    font-size: 15px;
     margin-bottom: 0.5rem;
   }
   @include tablet {
     width: 15.5rem;
+    font-size: 20px;
   }
 }
 
