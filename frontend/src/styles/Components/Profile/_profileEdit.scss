@@ -1,42 +1,57 @@
-// First Column
-.profile{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  justify-content: space-around;
-  padding-top: 2.5rem;
+.profile {
+  @include fdr-fwnw-aife-jcsa;
+  width: 95%;
+  @include tablet {
+    align-items: flex-start;
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
-.profileNews-Profile{
+.profileNews-Profile {
   width: 15rem;
 }
 
-.profileEmail{
+.profileEmail {
   background-color: $textAreaColor;
   width: 14rem;
   text-align: center;
-  padding: 13px;
   border-radius: 18px 0 18px 0;
-  box-shadow: 1px 6px 20px 7px $tertiary;
-  border: dotted $tertiary;
+  border: dotted 2px $tertiary;
+  @include mobile {
+    width: 18rem;
+    font-size: 17px;
+  }
 }
 
-.emailProfile{
+.emailProfile {
   color: $tertiary;
   font-size: 1.5rem;
 }
 
-// Second Column
 .cardAvatar {
   text-align: center;
-  border-radius: 30px 0 30px 0;
+  @include border-radius-30;
   background-color: $secondaryOpacity;
   box-shadow: 1px 6px 20px 7px $tertiary;
   border: dotted 2px $tertiary;
   height: 25rem;
   padding: 1rem;
-  width: 25rem;
+  width: 35%;
+  @include tablet {
+    width: 40%;
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    height: 12rem;
+    padding: 0.5rem;
+    box-shadow: 1px 6px 20px 0px $tertiary;
+  }
 }
 
 .welcomeProfile {
@@ -47,18 +62,23 @@
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
+  @include tablet {
+    font-size: 17px;
+  }
+  @include mobile {
+    font-size: 15px;
+    width: 40%;
+  }
 }
 
-#avatarName {
+.avatarName {
   color: $primary;
   width: 8rem;
 }
 
 .profileDate,
 .profileTime {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
+  @include fwnw-fdrr;
   font-size: 14px;
   font-weight: bold;
   color: grey;
@@ -66,24 +86,21 @@
 }
 
 .mySideAvatar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  @include fdc-aic-jcse;
 }
 
-#avatar {
+.avatar {
   font-size: 20px;
   color: $tertiary;
   font-weight: bold;
   padding-bottom: 1rem;
 }
 
-#avatarFile {
+.avatarFile {
   display: flex;
 }
 
-#avatarImg {
+.avatarImg {
   width: 14rem;
   height: 14rem;
   border-radius: 9rem;
@@ -91,40 +108,91 @@
   background-color: $tertiaryOpacity;
   box-shadow: 0px 0px 7px 2px #ffd7d7;
   border: dotted 2px #ffd7d7;
+  @include tablet {
+    width: 12rem;
+    height: 12rem;
+  }
+  @include mobile {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
-//Third Column
-
-.biographyCards{
+.biographyCards {
   display: flex;
   text-align: center;
+  align-items: center;
   flex-direction: column;
-  border-radius: 30px 0 30px 0;
+  @include border-radius-30;
   background-color: $textAreaColor;
   box-shadow: 1px 6px 20px 7px $tertiary;
   border: dotted 2px $tertiary;
   height: 25rem;
-  width: 20rem;
+  width: 25%;
   padding: 1rem;
+  @include tablet {
+    width: 40%;
+  }
+  @include mobile {
+    width: 90%;
+    height: 20%;
+    padding: 0.5rem;
+    box-shadow: 1px 6px 20px 0px $tertiary;
+  }
 }
 
-#talkingToYou{
+.talkingToYou {
   font-weight: bolder;
   font-size: 20px;
   margin-bottom: 1rem;
   color: $secondary;
   background-color: #4e5166cf;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   padding: 5px;
   align-items: center;
   width: 17.5rem;
   border: dotted 2px $secondary;
+  @include mobile {
+    width: 11.5rem;
+    font-size: 17px;
+    margin-bottom: 0.5rem;
+  }
+  @include tablet {
+    width: 15.5rem;
+  }
 }
 
-#myBiography{
+.myBiography {
   background-color: $secondaryOpacity;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   width: 17.5rem;
   height: 20rem;
   border: dotted 2px $tertiary;
+  margin-bottom: 2rem;
+  @include mobile {
+    width: 17.5rem;
+    height: 4rem;
+    margin-bottom: 0.5rem;
+  }
+  @include tablet {
+    width: 15.5rem;
+  }
+}
+
+@include mobile {
+  .myEmail {
+    font-size: 15px;
+  }
+
+  .actionModifyPosted {
+    border-radius: 2rem;
+    width: 3rem;
+    padding: 2px;
+  }
+
+  .actionDeletePosted {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+  }
 }

@@ -56,7 +56,9 @@ const Posted = ({ post }) => {
         `${process.env.REACT_APP_API_URL}api/users/${post.userId}/`,
         authHeader()
       )
-      .then((res) => setPseudo(res.data.user.pseudo))
+      .then((res) => {
+        setPseudo(res.data.user.pseudo);
+      })
       .catch((error) => ({ message: error }));
   }, [post]);
 
@@ -64,10 +66,13 @@ const Posted = ({ post }) => {
     <>
       {/* Message ---------------------------- */}
       <div className="bigCard">
+        <div className="UserAvatarPseudo">
+          <img src={user.image} alt="avatar" className="avatarUser" />
+          <div className="postedPseudo">Posté par :{pseudo} </div>
+        </div>
+        <div className="mediumCards">
         <div className="cardPosted">
           <div className="talks">
-            <div className="postedPseudo">Posté par : {pseudo}</div>
-
             <p className="postedMessage">{post.message}</p>
           </div>
 
@@ -83,13 +88,14 @@ const Posted = ({ post }) => {
             <img src={post.image} alt="Aucun fichier" className="imgPosted" />
           </div>
         )}
+        </div>
       </div>
 
       {/* Actions Delete and Modify --------------------  */}
 
-      <div id="actions">
+      <div className="actions">
         {(user.id === post.userId || user.role === 1) && (
-          <div id="modifyDeleteBtn">
+          <div className="modifyDeleteBtn">
             {update === false && (
               <img
                 src={eraser}
@@ -119,9 +125,17 @@ const Posted = ({ post }) => {
                   src={stamp1}
                   alt="stampValidate"
                   onClick={() => handleModify(post.id)}
-                  id="stampPosted"
+                  className="stampPosted"
                 />
               </>
+            )}
+            {update === true && (
+              <img
+                src={eraser}
+                alt="eraserModify"
+                className="eraserPost"
+                onClick={() => setUpdate(!update)}
+              />
             )}
 
             <img

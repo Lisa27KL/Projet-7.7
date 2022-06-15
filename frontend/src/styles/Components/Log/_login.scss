@@ -1,11 +1,11 @@
-#login{
+#login {
   display: flex;
   font-size: 25px;
   justify-content: center;
   color: $secondary;
   padding: 5px;
   cursor: pointer;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   background-color: $primaryOpacity;
   margin: 10px;
   width: 12rem;
@@ -14,8 +14,8 @@
 
 #login:hover {
   cursor: pointer;
-  transform: scale(1.10);
-  color:$primary ;
+  transform: scale(1.1);
+  color: $primary;
   font-weight: bolder;
   background-color: $secondaryOpacity;
   border: dotted 2px $primary;
@@ -25,12 +25,21 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-radius: 30px 0 30px 0;
+  @include border-radius-30;
   background-color: $secondaryOpacity;
   box-shadow: 1px 6px 20px 7px $tertiary;
   width: 30rem;
   margin-left: 30%;
   border: dotted 2px $primary;
+  
+  @include mobile {
+    width: 80%;
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+  }
 }
 
 .title-form-login {
@@ -38,7 +47,7 @@
 }
 
 .form-login {
-  color:$tertiary;
+  color: $tertiary;
   font-weight: bold;
   font-size: 17px;
 }
@@ -51,7 +60,7 @@
   font-size: 17px;
   background-color: #4e51668a;
   font-weight: 900;
-  border-radius: 9px 0 9px 0;
+  @include border-radius-9;
   border: dotted 4px $primary;
   cursor: pointer;
 }
@@ -67,10 +76,16 @@
 .form-cards-login {
   width: 25rem;
   height: 30px;
-  border-radius: 9px 0 9px 0;
+  @include border-radius-9;
+  @include mobile {
+    width: 18rem;
+    height: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
-#errorMsgLogIn{
+#errorMsgLogIn {
   color: $primary;
   font-weight: bold;
   font-size: 15px;

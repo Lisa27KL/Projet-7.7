@@ -19,22 +19,22 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require("./userModel.js")(sequelize, Sequelize);
-db.role = require("./roleModel.js")(sequelize, Sequelize);
+//db.role = require("./roleModel.js")(sequelize, Sequelize);
 db.posts = require('./postsModel.js')(sequelize,Sequelize);
 db.comments = require('./commentsModel.js')(sequelize, Sequelize);
 
 // *******************  User Associates  *******************
-db.role.belongsToMany(db.user, {
-  through: "user_roles",
-  foreignKey: "roleId",
-  otherKey: "userId",
-});
+// db.role.belongsToMany(db.user, {
+//   through: "user_roles",
+//   foreignKey: "roleId",
+//   otherKey: "userId",
+// });
 
-db.user.belongsToMany(db.role, {
-  through: "user_roles",
-  foreignKey: "userId",
-  otherKey: "roleId",
-});
+// db.user.belongsToMany(db.role, {
+//   through: "user_roles",
+//   foreignKey: "userId",
+//   otherKey: "roleId",
+// });
 
 
 // *******************  Posts Associates  *******************
@@ -55,6 +55,6 @@ db.posts.hasMany(db.comments, {as: "comments", onDelete: "cascade"});
 db.user.hasMany(db.comments,{as: "comments", onDelete: "cascade"});
 
 
-db.ROLES = ["user", "admin"];
+//db.ROLES = ["user", "admin"];
 
 module.exports = db;

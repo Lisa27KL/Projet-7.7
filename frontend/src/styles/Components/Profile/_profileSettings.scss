@@ -1,39 +1,119 @@
 .navbar-Profile {
-    width: 20rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+  width: 20%;
+  margin-left: 4rem;
+  margin-bottom: 0.5rem;
+  @include tablet {
+    width: 50%;
+    margin-left: 10.5rem;
+  }
+  @include mobile {
+    margin-left: 4.5rem;
+    width: 18rem;
+  }
 }
 
-.blocActions{
-    width: 25rem;
-    height: 21rem;
-    background-color: $textAreaColor;
-    position: absolute;
-    border: dotted 2px $primary;
-    border-radius: 15px 0 15px 0;
-    padding: 10px;
+.navBarProfileOnly {
+  width: 20rem;
 }
 
-.closeModal{
-    background-color: $primaryOpacity;
-    font-size: 1.5rem;
-    border: dotted 2px $tertiaryOpacity;
-    border-radius: 10px 0 10px 0;
-    margin: 5px;
+.settingsProfileBtn {
+  margin-left: 9.5rem;
+  margin-bottom: 1rem;
+  width: 10%;
+
+  @include mobile {
+    margin-bottom: 0.5rem;
+    width: 50%;
+  }
 }
 
-.settingsModification{
-    height: 8rem;
-    width: 11rem;
-    background-color: $secondaryOpacity;
-    border-radius: 13px 0 13px 0;
-    margin: 5px;
-    padding: 10px;
-    border: dotted 2px $tertiary;
+.blocActions {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 11rem;
+  position: absolute;
+  background-color: $textAreaColor;
+  border: dotted 2px $primary;
+  border-radius: 15px 0 15px 0;
+  padding: 10px;
 }
 
-.deleteProfile{
-    width: 10rem;
+.backBlocActions{
+  width: 10%;
+}
+
+.users {
+  display: flex;
+  flex-direction: row;
+}
+
+.closeModal {
+  background-color: $primaryOpacity;
+  font-size: 1.5rem;
+  border: dotted 2px $tertiaryOpacity;
+  border-radius: 10px 0 10px 0;
+  margin: 5px;
+}
+
+.settingsUsers {
+  height: 9rem;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondaryOpacity;
+  border-radius: 13px 0 13px 0;
+  margin: 5px;
+  padding: 10px;
+  border: dotted 2px $tertiary;
+}
+
+.deleteProfile {
+  text-align: center;
+  padding: 1rem;
+  width: 14rem;
+  height: 4rem;
+}
+
+.usersProfiles {
+  display: flex;
+}
+
+.deleteUserByAdmin {
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.profileSet {
+  display: flex;
+  flex-direction: column;
+  width: 7%;
+
+  @include tablet {
+    width: 10%;
+  }
+}
+
+.modifyProfile {
+  background-color: $textAreaColor;
+  width: 17rem;
+  padding: 1rem;
+  margin-top: 5rem;
+  @include border-radius-15;
+  border: dotted 2px $primaryOpacity;
+  height: 21rem;
+  position: absolute;
+}
+
+.settingsModification {
+  height: 4rem;
+  width: 14rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondaryOpacity;
+  border-radius: 13px 0 13px 0;
+  margin: 5px;
+  padding: 10px;
+  border: dotted 2px $tertiary;
 }

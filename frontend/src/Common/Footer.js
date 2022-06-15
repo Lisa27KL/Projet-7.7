@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="h3-footer">
-        <h3 id="footer-title">Nos Partenariats </h3>
+        <h3 className="footer-title">Nos Partenariats </h3>
       </div>
       <div className="links-footer">
         {/* <ul /> */}

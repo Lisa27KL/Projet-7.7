@@ -1,35 +1,99 @@
-#profileSettings, .eraserPost,  #stampPosted , #stampProfile , .binPost, .groupIcon{
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
+.chatingImg,
+.welcomeImg,
+.myProfileBtn,
+.ActualityBtn,
+.ImOutBtn {
+  height: 3rem;
+  width: 3rem;
+}
+#profileSettings,
+.eraserPost,
+.stampPosted,
+.stampProfile,
+.binPost,
+.groupIcon {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
 }
 
-#profileSettings, .eraserPost:hover, #stampPosted:hover , #stampProfile:hover , .binPost:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+#profileSettings,
+.eraserPost:hover,
+#stampPosted:hover,
+.stampProfile:hover,
+.binPost:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
+.signupIcon,
+.loginIcon {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
+
+.binBtn,
+.editBtn,
+.backPost {
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  @include mobile {
+    margin: 0.5rem;
+  }
+}
+
+.binBtn:hover,
+.editBtn:hover,
+.backPost:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.settingsUsersBtn,
+.eraserUser,
+.backModify {
+  width: 4rem;
+  height: 4rem;
+  padding: 4px;
+  background-color: $tertiaryOpacity;
+  border: dotted 2px $secondary;
+  @include border-radius-9;
+}
 
 //Icons footer
 
-.socialIcons{
-    width: 1.5rem;
-    height: 1.5rem;
+.socialIcons {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-#signupIcon, #loginIcon {
-    width: 3rem;
+@include tablet {
+  .chatingImg,
+  .welcomeImg,
+  .myProfileBtn,
+  .ActualityBtn,
+  .ImOutBtn {
     height: 3rem;
-    margin-top: 1rem;
-}
-
-.chatingImg, .welcomeImg, #ImOutBtn, #myProfileBtn, #ActualityBtn{
-    height: 3rem;
     width: 3rem;
+  }
 }
+@include mobile {
+  .chatingImg {
+    height: 2rem;
+    width: 2rem;
+  }
 
-#binBtn, #editBtn{
+  .eraserPost,
+  .binPost,
+  .stampPosted {
     width: 2rem;
     height: 2rem;
-    margin: 1rem;
   }
+
+  .eraserUser {
+    margin-top: 0.5rem;
+  }
+}

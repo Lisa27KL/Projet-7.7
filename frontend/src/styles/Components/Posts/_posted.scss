@@ -1,136 +1,218 @@
-.cardPosted{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: $textAreaColor;
-    border-radius: 15px 0 15px 0;
-    margin: 5px;
-    padding: 15px;
-    width: 30rem;
-    height: 11rem;
-    border: solid 2px $primaryOpacity;
-    margin-top: 1rem;
-}
-
-.talks{
-    color: blueviolet;    
-}
-
-.postedPseudo{
-    display: flex;
-    font-size: 15px;
-    color: black;
-    font-weight: bold;
-    border: dotted 1px $secondary;
-}
-
-.postedDate{
-    display: flex;
-    font-size: 13px;
-    color: black;
-    font-weight: bold;
-}
-
-.postedMessage{
-    display: flex;
+.bigCard {
+  display: flex;
+  justify-content: space-around;
+  background-color: $tertiaryOpacity;
+  border-radius: 0 20px 0 0;
+  flex-direction: column;
+  width: 100%;
+  @include tablet {
+    padding: 0.5rem;
+  }
+  @include mobile {
     height: auto;
+    padding: 0.5rem;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.UserAvatarPseudo {
+  margin-top: 0.5rem;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  @include mobile {
+    width: 70%;
+    margin-left: 0;
+  }
+}
+
+.avatarUser {
+  width: 4rem;
+  height: 4rem;
+  @include border-radius-15;
+  border: dotted 2px $secondary;
+}
+
+.postedPseudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  height: 1.5rem;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  border: dotted 1px $primary;
+  background-color: $secondaryOpacity;
+  @include border-radius-9;
+  @include tablet {
     font-size: 20px;
+  }
+  @include mobile {
+    font-size: 15px;
+  }
 }
 
-.postedTime{
-    display: flex;
-    justify-content: flex-end;
+.mediumCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cardPosted {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $textAreaColor;
+  @include border-radius-15;
+  margin: 5px;
+  padding: 15px;
+  width: 30rem;
+  height: 11rem;
+  border: solid 2px $primaryOpacity;
+  margin-top: 1rem;
+  @include tablet {
+    width: 85%;
+    height: 15rem;
+  }
+  @include mobile {
+    width: 17rem;
+    height: 10rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    padding: 4px;
+  }
+}
+
+.talks {
+  color: blueviolet;
+}
+
+.postedDate {
+  display: flex;
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+
+.postedMessage {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  font-size: 20px;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.postedTime {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  color: black;
+}
+
+.dateTime {
+  display: flex;
+  flex-wrap: nowrap;
+  border: dotted 1px $secondary;
+}
+
+.date,
+.time {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+  @include tablet {
+    font-size: 16px;
+  }
+  @include mobile {
     font-size: 12px;
-    color: black;
+  }
 }
 
-.bigCard{
-    display: flex;
-    justify-content: space-around;
-    background-color: $tertiaryOpacity;
-    border-radius: 0 20px 0 0;
+.postedImage {
+  display: flex;
+  width: 13rem;
+  height: 11rem;
+  background-color: white;
+  border: solid 2px $primaryOpacity;
+  margin: 5px;
+  margin-top: 1rem;
+  padding: 10px;
+  background-color: $secondaryOpacity;
+  @include border-radius-20;
+  @include tablet {
+    height: 15rem;
+    width: 25%;
+  }
+  @include mobile {
+    width: 12rem;
+    height: 10rem;
+    margin: 0;
+  }
 }
 
-.dateTime{
-    display: flex;
-    flex-wrap: nowrap;
-    border: dotted 1px $secondary;
-}
-
-.date{
-    display: flex;
-    font-size: 13px;
-    color: black;
-    font-weight: bold;
-}
-
-.time{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 13px;
-    color: black;
-    font-weight: bold;
-}
-
-.postedImage{
-    display: flex;
-    width: 13rem;
-    height: 11rem;
-    background-color: white;
-    border-radius: 30px 0 30px 0;
-    border: solid 2px $primaryOpacity;
-    margin: 5px;
-    margin-top: 1rem;
-    padding: 10px;
-    background-color: $secondaryOpacity;
-    border-radius: 20px 0 20px 0;
-}
-
-.imgPosted{
-    display: flex;
-}
-
-#actions{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-bottom: 2rem;
-    background-color: $tertiaryOpacity;
-    border-radius: 0 0 0px 20px;
-}
-
-#actionsModifyDeletePosted{
-    display: flex;
-}
-
-#eraserPost, #stampPosted , #binPost{
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-}
-
-#eraserPost:hover, #stampPosted:hover, #binPost:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-#modifyDeleteBtn{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 5rem;
-    width: 40rem;
-}
-
-.writeModification{
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 2rem;
+  background-color: $tertiaryOpacity;
+  border-radius: 0 0 0px 20px;
+  @include mobile {
+    margin-top: 0px;
+    width: 100%;
     height: 4rem;
-    width: 55rem;
-    background-color:$whiteOpacity;
-    border-radius: 20px 0 20px 0;
-    margin: 10px;
-    padding: 10px;
-    border: dotted 2px $secondaryOpacity;
+  }
+}
+
+.modifyDeleteBtn {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  width: 40rem;
+  @include tablet {
+    justify-content: space-evenly;
+    width: 80%;
+  }
+  @include mobile {
+    width: 19.5rem;
+    height: 4rem;
+    justify-content: space-evenly;
+  }
+}
+
+.writeModification {
+  height: 4rem;
+  width: 55rem;
+  background-color: $textAreaColor;
+  @include border-radius-20;
+  margin: 10px;
+  padding: 10px;
+  border: dotted 2px $secondaryOpacity;
+  @include tablet {
+    height: 4rem;
+    width: 59rem;
+    margin: 5px;
+    padding: 6px;
+    font-size: 17px;
+  }
+  @include mobile {
+    width: 25rem;
+    height: 3rem;
+    margin: 1px;
+    padding: 5px;
+  }
 }

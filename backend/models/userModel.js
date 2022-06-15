@@ -21,14 +21,10 @@ module.exports = (sequelize, Sequelize) => {
       allowNull:true,
       type: Sequelize.STRING,
     },
-    createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE
+    role:{
+      type: Sequelize.INTEGER,
+      defaultValue: 0,
     },
-    updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE
-    }
   });
 
   return User;

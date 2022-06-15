@@ -3,10 +3,12 @@ import UserContext from "./UserContext";
 import eraser from "../../Common/img/eraser1.png";
 import stamp2 from "../../Common/img/stamp2.png";
 import bin from "../../Common/img/delete.png";
+import back from "../../Common/img/back.png";
 
 function ProfileNew() {
   const { user, updateUser, deleteUser } = useContext(UserContext);
   const [update, setUpdate] = useState(false);
+
   const [newBio, setNewBio] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPseudo, setNewPseudo] = useState("");
@@ -59,37 +61,44 @@ function ProfileNew() {
   const handleDelete = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir nous quitter ?")) {
       deleteUser(id);
+      sessionStorage.removeItem("user");
     }
   };
 
   return (
     <>
-      <div className="blocActions">
-        <div className="modifyProfile">
+      <div className="profileSet">
+        <div >
           {update === false && (
             <img
               src={eraser}
               alt="eraserModify"
-              className="eraserPost"
+              className="eraserUser"
               onClick={() => setUpdate(!update)}
             />
           )}
+          
           {update && (
             <>
+                    <div className="modifyProfile">
+
               <textarea
                 type="text"
+                placeholder="Mon Email"
                 defaultValue={user.email}
                 onChange={(e) => handleNewEmail(e)}
                 className="settingsModification"
               />
               <textarea
                 type="text"
+                placeholder="Mon Pseudo"
                 defaultValue={user.pseudo}
                 onChange={(e) => handleNewPseudo(e)}
                 className="settingsModification"
               />
               <textarea
                 type="text"
+                placeholder="Ma Biographie"
                 defaultValue={user.bio}
                 onChange={(e) => handleNewBio(e)}
                 className="settingsModification"
@@ -103,23 +112,31 @@ function ProfileNew() {
                 onChange={(e) => handleNewImage(e)}
               />
 
+              <div className="deleteProfile">
               <img
                 src={stamp2}
                 alt="stampValidate"
                 onClick={() => handleModify(user.id)}
-                id="stampProfile"
+                className="stampProfile"
               />
+              <img
+                src={bin}
+                alt="binDelete"
+                className="binPost"
+                onClick={() => handleDelete(user.id)}
+              />
+              </div>
+              </div>
             </>
           )}
-          <div className="deleteProfile">
+          {update === true && (
             <img
-              src={bin}
-              alt="binDelete"
-              className="binPost"
-              onClick={() => handleDelete(user.id)}
+              src={back}
+              alt="backModify"
+              className="backModify"
+              onClick={() => setUpdate(!update)}
             />
-      
-          </div>
+          )}
         </div>
       </div>
     </>

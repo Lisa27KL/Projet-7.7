@@ -43,14 +43,3 @@ export function DateProfile() {
 
   return dayMonthYear;
 }
-
-// export function TimeToString() {
-//   //Time
-//   const hour = newDate.getHours();
-//   const minutes = newDate.getMinutes();
-//   const time = `${hour < 10 ? `0${hour}` : `${hour}`}${":"}${
-//     minutes < 10 ? `0${minutes}` : `${minutes}`
-//   }`;
-
-//   return time;
-// }

@@ -1,43 +1,58 @@
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: $tertiaryOpacity;
-    border: solid 2px  $primary;
-    list-style: none;
+  @include col-nw-aic-jcc;
+  width: 100%;
+  background-color: $tertiaryOpacity;
+  border: solid 2px $primary;
+  list-style: none;
+  @include mobile {
+    height: 7rem;
+  }
+  @include tablet {
+    height: 8rem;
+  }
 }
 
-.links-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    height: 35px;
-    justify-content: space-between;
-    margin-left: 13rem;
-    width: 60rem;
+.links-footer {
+  @include dlr-fwr-sis;
+  height: 35px;
+  justify-content: space-between;
+  margin-left: 13rem;
+  width: 60rem;
+  @include mobile {
+    width: 70%;
+    margin-left: 3rem;
+  }
+  @include tablet {
+    width: 80%;
+    margin-left: 4rem;
+  }
 }
 
-#footer-title{
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: white;
-
+.footer-title {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  @include mobile {
+    margin-top: 5px;
+  }
+  @include tablet {
+    font-size: 2rem;
+  }
 }
 
-.icons-footer{
-    display: flex;
-    font-size: 20px;
-    color: $secondary;
+.icons-footer {
+  display: flex;
+  font-size: 20px;
+  color: $secondary;
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
-.icons-footer:hover{
-    transform: scale(1.05);
-    color: $primary;
+.icons-footer:hover {
+  transform: scale(1.05);
+  color: $primary;
 }

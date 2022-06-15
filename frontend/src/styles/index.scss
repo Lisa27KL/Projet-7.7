@@ -1,6 +1,6 @@
 @import "./settings.scss";
 @import "./Utils/variables";
-// @import "./utils/mixins.scss";
+@import "./utils/mixins.scss";
 
 // Icons
 @import "./Utils/icons.scss";
@@ -10,16 +10,14 @@
 @import "./Pages/posts";
 @import "./Pages/profile";
 
-
 // Common
 @import "./Common/header";
 @import "./Common/footer";
 @import "./Common/navbar";
 
-
 // Components scss **************************
 
-//Log 
+//Log
 @import "./Components/Log/signup";
 @import "./Components/Log/login";
 
@@ -31,11 +29,3 @@
 //Profile
 @import "./Components/Profile/profileEdit";
 @import "./Components/Profile/profileSettings";
-// @import "./pages/profile.scss";
-
-// @import "./components/icons.scss";
-
-//Responsive
-@import "./Responsives/mobile.scss";
-@import "./Responsives/tablettes.scss";
-@import "./Responsives/desktop.scss";

@@ -3,6 +3,7 @@ import PostContext from "../../Components/Posts/PostContext";
 import chating from "../../Common/img/chating.png";
 import bin from "../../Common/img/delete.png";
 import publish from "../../Common/img/publish.png";
+import back from "../../Common/img/back.png";
 
 const PostsEdit = () => {
   const { addPost } = useContext(PostContext);
@@ -34,6 +35,10 @@ const PostsEdit = () => {
     setImage("");
     setFile("");
   };
+
+  const handleReset = (e) =>{
+    empty();
+  }
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
@@ -75,6 +80,7 @@ const PostsEdit = () => {
           <div className="blocImgActions">
             <div className="bloc-Image">
               <label className="post-Image">Image :</label>
+
               <input
                 id="file"
                 className="imgBTN"
@@ -86,7 +92,7 @@ const PostsEdit = () => {
 
               {image ? (
                 <div>
-                  <img src={image} alt="" id="futurImg" />{" "}
+                  <img src={image} alt="" className="futurImg" />{" "}
                 </div>
               ) : null}
             </div>
@@ -95,14 +101,21 @@ const PostsEdit = () => {
               <img
                 src={bin}
                 alt="binDelete"
-                id="binBtn"
+                className="binBtn"
                 onClick={(e) => handleDelete(e)}
               />
               <img
                 src={publish}
                 alt="binDelete"
-                id="editBtn"
+                className="editBtn"
                 onClick={(e) => handleSubmit(e)}
+              />
+
+              <img
+                src={back}
+                alt="eraserModify"
+                className="backPost"
+                onClick={(e) => handleReset(e) }
               />
 
               <div></div>

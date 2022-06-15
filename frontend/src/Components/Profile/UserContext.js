@@ -26,7 +26,7 @@ export const UserProvider = ({ children }) => {
   const getAllUsers = async () => {
     await axios
       .get(`${process.env.REACT_APP_API_URL}api/users/`, authHeader())
-      .then((res) => setUsers([res.data.users]))
+      .then((res) => setUsers(res.data.users))
       .catch((error) => ({ message: error }));
   };
 
@@ -44,7 +44,7 @@ export const UserProvider = ({ children }) => {
   const deleteUser = async (id) => {
     await axios
       .delete(`${process.env.REACT_APP_API_URL}api/users/${id}`, authHeader())
-      .then(sessionStorage.removeItem("user"))
+      .then((res)=> setNewUser(res.data))
       .catch((error) => ({ message: error }));
   };
 

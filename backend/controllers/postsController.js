@@ -73,50 +73,70 @@ exports.updatePost = (req, res) => {
   Post.findOne({
     where: { id: id },
   })
-
-    .then((post) => {
-      if (req.file) {
-        if (post.image !== null) {
-          const filename = post.image.split("/images/")[1];
-          fs.unlink(`images/${filename}`, () => {
-            const postObject = {
-              // ...JSON.parse(req.body.post),
+  .then((post) => {
+    if (req.file && post.image != null) {
+      const filename = post.image.split("/images/")[1];
+      fs.unlink(`images/${filename}`, () => {
+        const postObject = {
+          message: req.body.message,
+          image: `${req.protocol}://${req.get("host")}/images/${
+            req.file.filename
+          }`,
+        };
+        post
+          .update({ ...postObject })
+          .then(() => {
+            res.json({
               message: req.body.message,
               image: `${req.protocol}://${req.get("host")}/images/${
                 req.file.filename
               }`,
-            };
-            console.log("sousou");
-            post
-              .update({ ...postObject })
-              .then(() => res.status(200).json({ message: "Post modified !" }))
-              .catch((error) => res.status(400).json({ message: error }));
+            });
+          })
+          .catch((err) => {
+            res.status(500).json({
+              message: "Error while upddating Post with id=" + id,
+            });
           });
-        } else {
-          console.log("toutou");
-          const postObject = { ...req.body };
-          post
-            .update({ ...postObject })
-            .then(() => res.status(200).json({ message: "Post modified !" }))
-            .catch((error) => res.status(400).json({ message: error }));
-        }
-      } else {
-        post
-          .update(req.body.post)
-          .then(() =>
-            res.send({
-              message: "Post was updated successfully.",
-            })
-          )
-          .catch((error) => res.status(400).json({ message: error }));
-      }
-    })
-
-    .catch((err) => {
-      res.status(500).send({
-        message: "Error updating Post with id=" + id,
       });
-    });
+    } else if (req.file) {
+      post
+        .update({
+          message: req.body.message,
+          image: `${req.protocol}://${req.get("host")}/images/${
+            req.file.filename
+          }`,
+        })
+        .then(() => {
+          res.json({
+            message: req.body.message,
+            image: `${req.protocol}://${req.get("host")}/images/${
+              req.file.filename
+            }`,
+          });
+        })
+        .catch((err) => {
+          res.status(500).json({
+            message: "Error while upddating Post with id=" + id,
+          });
+        });
+    } else {
+      post
+        .update({
+          message: req.body.message,
+        })
+        .then(() => {
+          res.json({
+            message: req.body.message,
+          });
+        })
+        .catch((err) => {
+          res.status(500).json({
+            message: "Error updating Post with id=" + id,
+          });
+        });
+    }
+  });
 };
 
 // Delete a Post with the specified id in the request

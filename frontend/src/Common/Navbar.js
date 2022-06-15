@@ -5,37 +5,31 @@ import profile from "../Common/img/profile.png";
 import newsPaper from "../Common/img/newspaper1.png";
 
 const NavBar = () => {
-
   const logout = () => {
-    sessionStorage.removeItem("user")
+    sessionStorage.removeItem("user");
   };
-  
-  return (
 
+  return (
     <div className="NavBar-container">
       <nav className="navBar">
         <NavLink to="/profile">
-          <button className="nav-button">
-          <img src={profile} alt="myProfile" id="myProfileBtn" />
-          </button>
+          <div className="nav-button">
+            <img src={profile} alt="myProfile" className="myProfileBtn" />
+          </div>
         </NavLink>
-
 
         <NavLink to="/posts">
-          <button className="nav-button">
-            <img src={newsPaper} alt="Actuality" id="ActualityBtn" />
-          </button>
+          <div className="nav-button">
+            <img src={newsPaper} alt="Actuality" className="ActualityBtn" />
+          </div>
         </NavLink>
-
 
         <NavLink to="/">
-          <button className="nav-button"
-          onClick={()=>{logout()}}>
-            <img src={goOut} alt="LogOut" id="ImOutBtn"/>
-          </button>
+          <div className="nav-button">
+            <img src={goOut} alt="LogOut" className="ImOutBtn" onClick={() => {
+              logout()}} />
+          </div>
         </NavLink>
-
-
       </nav>
     </div>
   );

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import UserContext from "../Profile/UserContext";
 import PostContext from "./PostContext";
 import Posted from "./Posted";
-//import Commented from "../Comments/Commented";
 
 const PostNews = () => {
   const { posts } = useContext(PostContext);
@@ -18,11 +17,7 @@ const PostNews = () => {
           ))}
         </div>
         </ul>
-        {/* <ul className="commentsArea">
-       {posts.map((comment,postId) => (
-         <Commented key={postId} comment={comment}/>
-       ))}
-       </ul>  */}
+      
     </div>
   );
 };

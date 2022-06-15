@@ -3,7 +3,7 @@ const helmet = require("helmet"); // OWASP : Secure Express app by setting vario
 //const rateLimit = require("express-rate-limit");
 
 const cors = require("cors");
-let corsOptions = {
+const corsOptions = {
   origin: "http://localhost:3000",
 };
 const path = require("path");

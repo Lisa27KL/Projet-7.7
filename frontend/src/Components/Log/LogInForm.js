@@ -66,7 +66,7 @@ function LogInForm() {
           }}
         />
         <br />
-        <img src={loginIcon} alt="loginIcon" id="loginIcon" onClick={(e) => {handleSubmit(e)}}/>
+        <img src={loginIcon} alt="loginIcon" className="loginIcon" onClick={(e) => {handleSubmit(e)}}/>
 
         <div id="errorMsgLogIn"></div>
 

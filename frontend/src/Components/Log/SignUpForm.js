@@ -72,7 +72,7 @@ function SignUpForm() {
       {formSubmit ? (
         <>
           <LogInForm />
-          <h4 id="success">Enregistrement réussi, veuillez-vous connecter</h4>
+          <h4 className="success">Enregistrement réussi, veuillez-vous connecter</h4>
         </>
       ) : (
         <div>
@@ -134,7 +134,7 @@ function SignUpForm() {
             <br />
             <div className="terms-checked">
               <input type="checkbox" id="terms" />
-              <label htmlFor="terms" id="terms-conditions">
+              <label htmlFor="terms" className="terms-conditions">
                 J'accepte les{" "}
                 <a href="/" target="blank" rel="noopener noreferrer">
                   conditions générales
@@ -142,7 +142,7 @@ function SignUpForm() {
               </label>
             </div>
             <div id="errorMsgSignUp"></div>
-            <img src={signupIcon} alt="signUpIcon" id="signupIcon" onClick={(e) => {handleSubmit(e)}}/>
+            <img src={signupIcon} alt="signUpIcon" className="signupIcon" onClick={(e) => {handleSubmit(e)}}/>
           </form>
         </div>
       )}

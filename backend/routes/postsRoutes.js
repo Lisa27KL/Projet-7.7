@@ -14,17 +14,10 @@ router.put(
   "/:id",
   authJwt.verifyToken,
   multer,
-  authorization ||
-  authJwt.isAdmin,
+  authorization,
   postsCtrl.updatePost
 );
 
-router.delete(
-  "/:id",
-  authJwt.verifyToken,
-  authorization ||
-  authJwt.isAdmin,
-  postsCtrl.deletePost
-);
+router.delete("/:id", authJwt.verifyToken, authorization, postsCtrl.deletePost);
 
 module.exports = router;

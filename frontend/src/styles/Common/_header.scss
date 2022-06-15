@@ -1,29 +1,37 @@
 .header-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: $tertiaryOpacity;
-    border: solid 2px  $primary;
-    position: fixed;
+  @include col-nw-aic-jcc;
+  width: 100%;
+  background-color: $tertiaryOpacity;
+  border: solid 2px $primary;
+  position: fixed;
+  @include mobile {
+    height: 7rem;
+    position: static;
+  }
+  @include tablet {
+    height: 8rem;
+    position: static;
+  }
 }
 
-.headerLogoTitle{
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
+.headerLogoTitle {
+  @include aic-fdrr-fwnw;
 }
 
-.logo{
-    display: flex;
-    justify-content: center;
+.logo {
+  display: flex;
+  justify-content: center;
 }
 
 .imgLogoGp {
-    width: 16rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  width: 17rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include mobile {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  @include tablet {
+    width: 23rem;
+  }
 }

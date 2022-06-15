@@ -8,6 +8,6 @@ const Home = () => {
         <Log />
       </div>
     </div>
-  )
+  );
 };
 export default Home;

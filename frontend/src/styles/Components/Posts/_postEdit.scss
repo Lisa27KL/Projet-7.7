@@ -4,33 +4,56 @@
 
 .postsCards {
   text-align: center;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   box-sizing: border-box;
-  background-color: #4e5166f2;
-  height: 25rem;
+  background-color: $tertiaryOpacity;
+  height: 100%;
   padding-top: 10px;
-  width: 25rem;
+  width: 95%;
   box-shadow: 1px 6px 25px 7px $secondary;
   border: dotted 2px $secondary;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
+  @include fdc-aic-fwnw;
+
+  @include tablet {
+    height: 17rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  @include mobile {
+    width: 100%;
+    height: 14rem;
+    padding-top: 3px;
+    margin-bottom: 1rem;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .Icon-Title {
-  width: 20rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  margin-left: 3rem;
+  width: 25%;
+  @include aic-fdr;
+  @include tablet {
+    width: 25%;
+    flex-direction: column;
+  }
+  @include mobile {
+    width: 60%;
+    margin-left: 0;
+    flex-direction: row;
+  }
 }
-
 
 .postTitle {
   font-size: 23px;
   color: $secondary;
   width: 12rem;
+  @include mobile {
+    font-size: 20px;
+  }
 }
 
 .post-Message {
@@ -39,18 +62,27 @@
 }
 
 .cardTitle {
-  width: 20rem;
+  width: 23.5rem;
   height: 2rem;
-  border-radius: 10px 0 10px 0;
+  @include border-radius-10;
   margin: 10px;
 }
 
 .cardMessage {
-  width: 20rem;
+  width: 23.5rem;
   height: 5rem;
-  border-radius: 10px 0 10px 0;
+  @include border-radius-10;
   padding: 6px;
   background-color: $textAreaColor;
+  @include tablet {
+    width: 40%;
+    height: 11rem;
+    padding: 8px;
+  }
+  @include mobile {
+    width: 16rem;
+    height: 5rem;
+  }
 }
 
 .publish-btn {
@@ -71,10 +103,17 @@
   display: flex;
   flex-direction: column;
   color: $secondary;
+
+  @include mobile {
+    flex-direction: row;
+  }
 }
 
 .post-Image {
   font-size: 18px;
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
 .imgBTN {
@@ -85,35 +124,65 @@
   padding-bottom: 1rem;
   color: $primary;
   cursor: pointer;
+  @include tablet {
+    margin-left: 2rem;
+  }
+  @include mobile {
+    margin-left: 1rem;
+    font-size: 12px;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 .blocImgActions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  @include fdr-jcsa;
   height: 12rem;
   width: 22rem;
   flex-wrap: nowrap;
-  border-radius: 15px 0 15px 0;
-
+  @include border-radius-15;
+  @include tablet {
+    width: 40%;
+    flex-direction: column;
+  }
+  @include mobile {
+    height: 4rem;
+    width: auto;
+    flex-direction: row;
+    width: 95%;
+  }
 }
 
-#futurImg {
+.futurImg {
   width: 10rem;
   height: 7rem;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   box-sizing: border-box;
   background-color: $secondaryOpacity;
   box-shadow: 0px 0px 7px 2px $secondary;
   border: dotted 2px $secondary;
+  @include mobile {
+    width: 6rem;
+    height: 4rem;
+  }
 }
 
 .actionsPostsEdit {
   display: flex;
   justify-content: flex-end;
-  width: 11rem;
+  width: 50%;
   height: 4rem;
   padding-top: 7rem;
+  @include tablet {
+    padding-top: 0;
+    width: 75%;
+  }
+  @include mobile {
+    padding-top: 0;
+    width: 4rem;
+    height: 3rem;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 36%;
+  }
 }
-
-

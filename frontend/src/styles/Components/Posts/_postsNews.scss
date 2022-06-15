@@ -1,8 +1,14 @@
 .actuality {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include fdc-aic;
   height: 100%;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 }
 
 .thread {
@@ -16,25 +22,41 @@
   width: 18rem;
   padding: 3px;
   font-size: 30px;
-  border-radius:  20px 0 20px 0;
-  border-bottom: dotted 2px $primaryOpacity;
-  border-right: dotted 2px $primaryOpacity;
-  border-left: dotted  2px $primaryOpacity;
+  @include border-radius-20;
+  border: dotted 2px $primaryOpacity;
   margin-bottom: 10px;
+  @include mobile {
+    width: 11rem;
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
 }
 
 .messagesArea {
-  display: flex;
-  background-color: #ffd7d7c7;
-  flex-direction: column;
-  align-items: center;
-  height: 35rem;
+  @include fdc-aic;
+  background-color: $secondaryOpacity;
+  height: 100%;
   width: 50rem;
   align-content: flex-start;
   box-shadow: 1px 6px 25px 7px $tertiary;
   border: dotted 2px $tertiary;
-  border-radius: 20px 0 20px 0;
+  @include border-radius-20;
   overflow-y: scroll;
   padding: 5px;
   padding-top: 0px;
+  @include tablet {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: 1px 6px 25px 0px #4e5166;
+  }
+  @include mobile {
+    width: 100%;
+    height: 13rem;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0.5rem;
+    box-shadow: 0px 6px 25px 0px $tertiary;
+  }
 }

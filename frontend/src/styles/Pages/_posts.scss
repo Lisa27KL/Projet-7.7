@@ -4,46 +4,95 @@
   width: 100%;
   height: 100vh;
   padding-top: 4.7rem;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    padding-top: 0;
+  }
+  @include mobile {
+    padding-top: 0;
+    width: 100%;
+  }
 }
 
 .Pseudo {
-  display: flex;
-  justify-content: space-evenly;
+  @include fdr-jcse;
+  align-items: center;
+  flex-wrap: nowrap;
   font-weight: bolder;
   height: 4rem;
   background-color: $secondary;
-  border-radius: 15px 0 15px 0;
+  @include border-radius-15;
   width: 30%;
   font-size: 23px;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
   margin-left: 27rem;
-  border-bottom: dotted $tertiary;
-  border-left: dotted $tertiary;
-  border-right: dotted $tertiary;
+  border: dotted 2px #4e5166;
+  @include tablet {
+    align-items: center;
+    margin-left: 0;
+    width: 50%;
+    height: 7rem;
+  }
+  @include mobile {
+    height: 5rem;
+    width: 60%;
+    font-size: 17px;
+    margin-left: 0rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 }
 
-
 .cardsDesign {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  @include fdr-jcse;
   width: 100%;
   height: 87%;
   padding-top: 2rem;
+
+  @include tablet {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include mobile {
+    flex-direction: column;
+    overflow: scroll;
+    height: 80%;
+    height: 100%;
+    padding-top: 0;
+  }
 }
-
-
 
 .navbar-Column {
   width: 17rem;
+
+  @include mobile {
+    width: 20.5rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
 }
 
-.postsEdit-Column{
+.postsEdit-Column {
   width: 27rem;
+
+  @include tablet {
+    width: 95%;
+  }
+  @include mobile {
+    width: 95%;
+  }
 }
 
-.postNews-Column{
- width: 56rem;
+.postNews-Column {
+  width: 56rem;
+  @include tablet {
+    width: 95%;
+    overflow: scroll;
+  }
+  @include mobile {
+    width: 95%;
+  }
 }

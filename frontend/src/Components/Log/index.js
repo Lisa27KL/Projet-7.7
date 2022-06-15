@@ -18,7 +18,7 @@ const Log = (props) => {
   return (
     <div>
       <div>
-        <ul id="homeConnection">
+        <ul className="homeConnection">
           <li
             onClick={handleModals}
             id="signup"
