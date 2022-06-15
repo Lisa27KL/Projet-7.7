@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import loginIcon from "../../Common/img/loginIcon.png"
+import loginIcon from "../../Common/img/loginIcon.webp"
 
 function LogInForm() {
   const [email, setEmail] = useState("");

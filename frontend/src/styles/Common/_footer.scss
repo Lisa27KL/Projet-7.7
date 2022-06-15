@@ -12,6 +12,12 @@
   }
 }
 
+.links-icons-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
 .links-footer {
   @include dlr-fwr-sis;
   height: 35px;

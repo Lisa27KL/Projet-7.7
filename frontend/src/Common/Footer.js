@@ -1,8 +1,8 @@
 import React from "react";
-import linkedin from "../Common/img/linkedin.png";
-import twitter from "../Common/img/twitter.png";
-import facebook from "../Common/img/facebook.png";
-import instagram from "../Common/img/instagram.png";
+import linkedin from "../Common/img/linkedin.webp";
+import twitter from "../Common/img/twitter.webp"
+import facebook from "../Common/img/facebook.webp";
+import instagram from "../Common/img/instagram.webp";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
         <h3 className="footer-title">Nos Partenariats </h3>
       </div>
       <div className="links-footer">
-        {/* <ul /> */}
+        <ul className="links-icons-footer">
         <li>
           <a
             href="https://fr.linkedin.com/"
@@ -48,6 +48,7 @@ const Footer = () => {
             <img src={instagram} alt="instagram" className="socialIcons" />
           </a>
         </li>
+        </ul>
       </div>
     </div>
   );

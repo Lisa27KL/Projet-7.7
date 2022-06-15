@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../Common/Navbar";
 import ProfileEdit from "../Components/Profile/ProfileEdit";
-import group from "../Common/img/group.png";
-import back from "../Common/img/back.png";
+import group from "../Common/img/group.webp";
+import back from "../Common/img/back.webp";
 import UserContext from "../Components/Profile/UserContext";
 import Admin from "../Components/Profile/Admin";
 

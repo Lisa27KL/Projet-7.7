@@ -1,5 +1,5 @@
 import React from "react";
-import Logo3 from "../Common/img/icon3.svg";
+import Logo3 from "../Common/img/icon3.webp";
 // import { NavLink } from "react-router-dom";
 
 const Header = () => {

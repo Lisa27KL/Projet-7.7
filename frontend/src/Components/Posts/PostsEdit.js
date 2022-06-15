@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import PostContext from "../../Components/Posts/PostContext";
-import chating from "../../Common/img/chating.png";
-import bin from "../../Common/img/delete.png";
-import publish from "../../Common/img/publish.png";
-import back from "../../Common/img/back.png";
+import chating from "../../Common/img/chating.webp";
+import bin from "../../Common/img/delete.webp";
+import publish from "../../Common/img/publish.webp";
+import back from "../../Common/img/back.webp";
 
 const PostsEdit = () => {
   const { addPost } = useContext(PostContext);

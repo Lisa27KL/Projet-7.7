@@ -7,9 +7,9 @@ import { DateToString, TimeToString } from "../../Services/Date";
 import PostContext from "./PostContext";
 import UserContext from "../Profile/UserContext";
 
-import eraser from "../../Common/img/eraser1.png";
-import stamp1 from "../../Common/img/stamp1.png";
-import bin from "../../Common/img/delete.png";
+import eraser from "../../Common/img/eraser1.webp";
+import stamp1 from "../../Common/img/stamp1.webp";
+import bin from "../../Common/img/delete.webp";
 
 const Posted = ({ post }) => {
   const { updatePost, deletePost } = useContext(PostContext);

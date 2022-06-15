@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "./UserContext";
-import bin from "../../Common/img/delete.png";
+import bin from "../../Common/img/delete.webp";
 
 const Admin = ({ profileUser }) => {
   const { deleteUser } = useContext(UserContext);

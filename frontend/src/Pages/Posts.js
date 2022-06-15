@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Common/Navbar";
 import PostNews from "../Components/Posts/PostNews";
 import PostsEdit from "../Components/Posts/PostsEdit";
-import welcome from "../Common/img/welcome.png";
+import welcome from "../Common/img/welcome.webp";
 import { PostProvider } from "../Components/Posts/PostContext";
 
 const Posts = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import goOut from "../Common/img/ImOut.png";
-import profile from "../Common/img/profile.png";
-import newsPaper from "../Common/img/newspaper1.png";
+import goOut from "../Common/img/ImOut.webp";
+import profile from "../Common/img/profile.webp";
+import newsPaper from "../Common/img/newspaper1.webp";
 
 const NavBar = () => {
   const logout = () => {

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import UserContext from "./UserContext";
-import eraser from "../../Common/img/eraser1.png";
-import stamp2 from "../../Common/img/stamp2.png";
-import bin from "../../Common/img/delete.png";
-import back from "../../Common/img/back.png";
+import eraser from "../../Common/img/eraser1.webp";
+import stamp2 from "../../Common/img/stamp2.webp";
+import bin from "../../Common/img/delete.webp";
+import back from "../../Common/img/back.webp";
 
 function ProfileNew() {
   const { user, updateUser, deleteUser } = useContext(UserContext);

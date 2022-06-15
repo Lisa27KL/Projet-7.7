@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import LogInForm from "./LogInForm";
-import signupIcon from "../../Common/img/sinupIcon.png"
+import signupIcon from "../../Common/img/sinupIcon.webp"
 
 function SignUpForm() {
   const [formSubmit, setFormSubmit] = useState(false);
