@@ -64,11 +64,11 @@
   align-items: center;
 }
 
-@mixin fdr-fwnw-aife-jcsa {
+@mixin fdr-fwnw-aifs-jcsa {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-around;
 }
 
