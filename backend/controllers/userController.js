@@ -31,23 +31,26 @@ exports.login = (req, res) => {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-      bcrypt.compare(req.body.password, user.password)
-      .then(valid =>{
-        if (!valid){
-          return res.status(401).send({accessToken: null, message: "Invalid Password !"})
-        }})
+      bcrypt
+        .compare(req.body.password, user.password)
+        .then((valid) => {
+          if (!valid) {
+            return res
+              .status(401)
+              .send({ accessToken: null, message: "Invalid Password !" });
+          }
           res.status(200).json({
             id: user.id,
             pseudo: user.pseudo,
             email: user.email,
             role: user.role,
             token: jwt.sign({ id: user.id }, process.env.MY_SECRET_TOKEN),
-          })
-          .catch((error) => res.status(500).json({ message: error }))
+          });
         })
+        .catch((error) => res.status(500).json({ message: error }));
+    })
     .catch((error) => res.status(500).json({ error }));
 };
-
 //************** Find All Users
 exports.findAllUsers = (req, res) => {
   User.findAll()
