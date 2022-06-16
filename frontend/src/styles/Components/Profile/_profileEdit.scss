@@ -17,7 +17,7 @@
 
 .profileEmail {
   background-color: $textAreaColor;
-  width: 14rem;
+  width: 95%;
   text-align: center;
   border-radius: 18px 0 18px 0;
   border: dotted 2px $tertiary;
@@ -150,15 +150,15 @@
   @include border-radius-15;
   padding: 5px;
   align-items: center;
-  width: 17.5rem;
+  width: 95%;
   border: dotted 2px $secondary;
+  @include tablet {
+    width: 15.5rem;
+  }
   @include mobile {
     width: 11.5rem;
     font-size: 17px;
     margin-bottom: 0.5rem;
-  }
-  @include tablet {
-    width: 15.5rem;
   }
 }
 
@@ -167,19 +167,18 @@
   font-size: 25px;
   font-weight: 600;
   @include border-radius-15;
-  width: 17.5rem;
+  width: 95%;
   height: 20rem;
   border: dotted 2px $tertiary;
   margin-bottom: 2rem;
-  @include mobile {
-    width: 17.5rem;
-    height: 4rem;
-    font-size: 15px;
-    margin-bottom: 0.5rem;
-  }
   @include tablet {
     width: 15.5rem;
     font-size: 20px;
+  }
+  @include mobile {
+    height: 4rem;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
   }
 }
 

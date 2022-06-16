@@ -7,7 +7,13 @@ module.exports = (sequelize, Sequelize) => {
     image: {
       type: Sequelize.STRING,
       allowNull: true,
-    }
+    },
+    like: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+      defaultValue: "0",
+    },
+    
   });
   return Posts;
 };

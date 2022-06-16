@@ -17,7 +17,9 @@ router.put(
   authorization,
   postsCtrl.updatePost
 );
-
 router.delete("/:id", authJwt.verifyToken, authorization, postsCtrl.deletePost);
+
+router.post("/:id/likes",authJwt.verifyToken, postsCtrl.addLikePost );
+router.get("/:id/likes",authJwt.verifyToken, postsCtrl.likePost);
 
 module.exports = router;

@@ -11,7 +11,7 @@ const path = require("path");
 // Routers
 const userRoutes = require("./routes/userRoutes");
 const postsRoutes = require("./routes/postsRoutes");
-const commentsRoutes = require("./routes/commentsRoutes");
+// const commentsRoutes = require("./routes/commentsRoutes");
 
 const app = express();
 
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 // Routes :
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postsRoutes);
-app.use("/api/comments", commentsRoutes);
+// app.use("/api/comments", commentsRoutes);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 module.exports = app;

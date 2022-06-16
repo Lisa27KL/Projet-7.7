@@ -19,22 +19,14 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require("./userModel.js")(sequelize, Sequelize);
-//db.role = require("./roleModel.js")(sequelize, Sequelize);
 db.posts = require('./postsModel.js')(sequelize,Sequelize);
-db.comments = require('./commentsModel.js')(sequelize, Sequelize);
+db.like = require("./likeModel.js")(sequelize, Sequelize);
 
-// *******************  User Associates  *******************
-// db.role.belongsToMany(db.user, {
-//   through: "user_roles",
-//   foreignKey: "roleId",
-//   otherKey: "userId",
-// });
 
-// db.user.belongsToMany(db.role, {
-//   through: "user_roles",
-//   foreignKey: "userId",
-//   otherKey: "roleId",
-// });
+db.user.hasMany(db.posts, {as:"posts", onDelete: "cascade"});
+db.user.hasMany(db.like, { as: "likes" });
+db.posts.hasMany(db.like, { as: "likes", onDelete: "cascade" });
+
 
 
 // *******************  Posts Associates  *******************
@@ -43,16 +35,44 @@ db.posts.belongsTo(db.user,{
   targetKey: "id",
 });
 
-// *******************  Comments Associates  *******************
-db.comments.belongsTo(db.posts,{
-  foreignKey:"postId",
+db.like.belongsTo(db.posts, {
+  foreignKey: "postId",
   targetKey: "id",
 });
 
 
-db.user.hasMany(db.posts, {as:"posts", onDelete: "cascade"});
-db.posts.hasMany(db.comments, {as: "comments", onDelete: "cascade"});
-db.user.hasMany(db.comments,{as: "comments", onDelete: "cascade"});
+
+// *******************  Comments Associates  *******************
+// db.comments.belongsTo(db.posts,{
+//   foreignKey:"postId",
+//   targetKey: "id",
+// });
+// db.posts.hasMany(db.comments, {as: "comments", onDelete: "cascade"});
+// db.user.hasMany(db.comments,{as: "comments", onDelete: "cascade"});
+
+
+//************************ Like *************************
+// db.user.belongsToMany(db.posts, {
+//   through: db.like,
+//   foreignKey: "userId",
+//   otherKey: "postsId"
+// });
+
+// db.posts.belongsToMany(db.user, {
+//   through: db.like,
+//   foreignKey: "postsId",
+//   otherKey: "userId"
+// });
+
+// db.like.belongsTo(db.user,{
+//   foreignKey: "userId",
+//   as:'user',
+// })
+
+// db.like.belongsTo(db.posts,{
+//   foreignKey: "postsId",
+//   as:'posts',
+// })
 
 
 //db.ROLES = ["user", "admin"];

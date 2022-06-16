@@ -1,5 +1,6 @@
 const db = require("../models");
 const Post = db.posts;
+const Like = db.like;
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
@@ -35,7 +36,7 @@ exports.createPost = (req, res) => {
 
 // Retrieve all Post from the database.
 exports.findAllPosts = (req, res) => {
-  Post.findAll({ include: ["comments"], order: [["createdAt", "DESC"]] })
+  Post.findAll({ /*include:["like"],*/ order: [["createdAt", "DESC"]] })
     .then((posts) => {
       res.send(posts);
     })
@@ -50,7 +51,7 @@ exports.findAllPosts = (req, res) => {
 // Find a single Post with an id
 exports.findOnePost = (req, res) => {
   const id = req.params.id;
-  Post.findByPk(id, { include: ["comments"] })
+  Post.findByPk(id /*,{include: ["like"]}*/)
     .then((post) => {
       if (post) {
         res.send(post);
@@ -72,8 +73,7 @@ exports.updatePost = (req, res) => {
 
   Post.findOne({
     where: { id: id },
-  })
-  .then((post) => {
+  }).then((post) => {
     if (req.file && post.image != null) {
       const filename = post.image.split("/images/")[1];
       fs.unlink(`images/${filename}`, () => {
@@ -161,4 +161,33 @@ exports.deletePost = (req, res) => {
         message: "Could not delete Post with id" + `${id}`,
       });
     });
+};
+
+// Like a Post
+exports.addLikePost = (req, res) => {
+  const postId = req.params.id;
+  console.log(postId);
+  Like.create({
+    where: { id: postId },$int: { like: 1 }
+  })
+    .then((like) => {
+      if (like + 1) {
+        res.status(201).json({ message: "Tu likes !" });
+      }
+    })
+    .catch((error) => res.status(400).json({ message: "tu sors par la 1" }));
+};
+
+
+exports.likePost = (req, res) => {
+  const postId = req.params.id;
+
+  Like.findAll({
+    where: { id: postId },
+  })
+    .then((like) => {
+      console.log(like);
+      res.status(201).json({ message: "GREAT ! You like this Post !" });
+    })
+    .catch((error) => res.status(400).json({ message: error }));
 };
