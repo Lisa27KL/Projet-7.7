@@ -26,3 +26,5 @@ Allez dans le dossier front-end : "cd frontend"
 Tapez la commande "npm install"
 Puis lancer le server avec "npm start".
 Laissez le terminal ouvert...
+
+Pour la suite vous allez devoir créer un fichier ".env" en suivant l'exemple donné dans ".env.example"
