@@ -1,6 +1,6 @@
 const express = require("express");
 const helmet = require("helmet"); // OWASP : Secure Express app by setting various HTTP headers.
-//const rateLimit = require("express-rate-limit");
+const rateLimit = require("express-rate-limit");
 
 const cors = require("cors");
 const corsOptions = {
@@ -36,13 +36,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(
-//   rateLimit({
-//     windowMs: 15 * 60 * 1000, //15 minutes
-//     max: 20, // Limit each IP à 30 requests per "window" / 15 mins.
-//     message: `BEWARE ! Too many connection attempts from this IP`,
-//   })
-// );
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000, //15 minutes
+    max: 20, // Limit each IP à 30 requests per "window" / 15 mins.
+    message: `BEWARE ! Too many connection attempts from this IP`,
+  })
+);
 
 // Routes :
 app.use("/api/users", userRoutes);
